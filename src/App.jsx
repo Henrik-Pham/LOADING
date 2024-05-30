@@ -55,8 +55,8 @@ function App() {
                     cursor: pointer;
 
                     position: fixed;
-                    bottom: 20px;
-                    right: 20px;
+                    bottom: 70px;
+                    right: 70px;
                     z-index: 1000;
                 }
 
