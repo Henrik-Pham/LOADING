@@ -17,26 +17,33 @@ function CircleButton() {
             </div>
             <style jsx>{`
                 .circle-button {
-                    border: 4px solid rgba(255, 204, 0, 1);
                     background-color: rgba(232, 29, 29, 0.86);
-                    color: #fc0;
+                    color: #000000;
                     border-radius: 50%;
-                    width: 90px;
-                    height: 90px;
+                    width: 150px;
+                    height: 150px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 20px auto;
                     padding: 10px;
-                    font: 700 17px/129% Inter, -apple-system, Roboto, Helvetica, sans-serif;
+                    font: 700 27px/129% Inter, -apple-system, Roboto, Helvetica, sans-serif;
                     text-align: center;
                     letter-spacing: -0.41px;
                     cursor: pointer;
+
+                    position: fixed;
+                    bottom: 100px;
+                    right: 100px;
+                    z-index: 1000;
                 }
+
                 @media (max-width: 991px) {
                     .circle-button {
-                        margin-top: 40px;
-                        white-space: normal;
+                        width: 100px;
+                        height: 100px;
+                        font-size: 20px;
+                        bottom: 10px;
+                        right: 10px;
                     }
                 }
             `}</style>
