@@ -1,10 +1,13 @@
 .background-container {
-    background-image: url('./images/mainPicture.webp'); /* Adjust the path if necessary */
+    background-image: url('./images/mainPicture.webp'); /* Use the correct path to your image */
     background-size: cover;
     background-position: center;
-    width: 100%;
+    background-repeat: no-repeat;
+    width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
