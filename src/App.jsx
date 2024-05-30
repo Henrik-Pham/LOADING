@@ -18,6 +18,21 @@ function App() {
         alert("Button clicked!");
     };
 
+    const getTextForSelectedChoice = (index) => {
+        switch (index) {
+            case 0:
+                return 'Option 1: Description for choice 1';
+            case 1:
+                return 'Option 2: Description for choice 2';
+            case 2:
+                return 'Option 3: Description for choice 3';
+            case 3:
+                return 'Option 4: Description for choice 4';
+            default:
+                return 'Click a button to see the options';
+        }
+    };
+
     return (
         <div className="background-container">
             <div className="circle-container">
@@ -27,8 +42,11 @@ function App() {
                 <Choice index={3} selectedChoice={selectedChoice}>🗺️</Choice>
             </div>
             <div className="controls">
-                <button onClick={() => handleKeyDown('up')}>Up</button>
-                <button onClick={() => handleKeyDown('down')}>Down</button>
+                <button onClick={() => handleKeyDown('up')}>Spin left</button>
+                <button onClick={() => handleKeyDown('down')}>Spin right</button>
+            </div>
+            <div className="text-box">
+                {getTextForSelectedChoice(selectedChoice)}
             </div>
             <div
                 className="circle-button"
@@ -60,6 +78,21 @@ function App() {
                     z-index: 1000;
                 }
 
+                .text-box {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: rgba(255, 255, 255, 0.8);
+                    padding: 20px;
+                    border: 2px solid #000;
+                    border-radius: 10px;
+                    font-size: 24px;
+                    text-align: center;
+                    width: 300px;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+
                 @media (max-width: 991px) {
                     .circle-button {
                         width: 100px;
@@ -67,6 +100,11 @@ function App() {
                         font-size: 20px;
                         bottom: 10px;
                         right: 10px;
+                    }
+
+                    .text-box {
+                        width: 250px;
+                        font-size: 20px;
                     }
                 }
             `}</style>
