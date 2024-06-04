@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import './styles.css';
 import Choice from './Choice';
 import CircleButton from './CircleButton';
+import backgroundImage from './images/mainPicture.webp';
 
 function MainPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
@@ -71,7 +72,7 @@ function MainPage() {
     };
 
     return (
-        <div className={`background-container ${isBlurred ? 'blur' : ''}`}>
+        <div className={`background-container ${isBlurred ? 'blur' : ''}`} style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="timer-bar" style={{ width: `${timerWidth}%` }}></div>
             <div className="circle-container">
                 <Choice index={0} selectedChoice={selectedChoice}>👆</Choice>

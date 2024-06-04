@@ -32,17 +32,17 @@ body {
 }
 
 .circle-container {
-    position: fixed;
     width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
     bottom: 20px;
     left: 12%;
     transform: translateX(-50%);
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .circle-choice {
@@ -79,13 +79,14 @@ body {
 }
 
 .controls {
-    position: fixed;
+    position: absolute;
     left: 30%;
     transform: translateX(-50%);
     bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0.7;
 }
 
 button {
@@ -93,6 +94,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    width: 150px; /* Ensure both buttons have the same width */
 }
 
 .circle-button {
@@ -109,14 +111,14 @@ button {
     text-align: center;
     letter-spacing: -0.41px;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     bottom: 70px;
     right: 70px;
     z-index: 1000;
 }
 
 .text-box {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -192,7 +194,7 @@ button {
     text-align: center;
     width: 500px;
     max-width: 90%;
-    position: fixed;
+    position: absolute;
     top: 10%;
     left: 55%;
     transform: translateX(-50%);

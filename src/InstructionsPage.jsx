@@ -1,14 +1,20 @@
 // InstructionsPage.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import Choice from './Choice';
 import CircleButton from './CircleButton';
 import backgroundImage from './images/DALL·E 2024-05-24 14.55.20 - A bright, open landscape with majestic mountains in the background. The scene is realistic with natural colors, depicting a serene outdoor environment.webp';
 
 function InstructionsPage() {
-    const choices = [
-        '👆', '🎮', '🎥', '🗺️'
-    ];
+    const [selectedChoice, setSelectedChoice] = useState(0);
+
+    const handleKeyDown = (rotation) => {
+        if (rotation === 'up') {
+            setSelectedChoice((previousChoice) => (previousChoice - 1 + 4) % 4);
+        } else if (rotation === 'down') {
+            setSelectedChoice((previousChoice) => (previousChoice + 1) % 4);
+        }
+    };
 
     return (
         <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -23,15 +29,15 @@ function InstructionsPage() {
                 <p>Ha en SPA opplevelse!</p>
             </div>
             <div className="circle-container">
-                {choices.map((choice, index) => (
-                    <Choice key={index} index={index} selectedChoice={0}>
+                {['👆', '🎮', '🎥', '🗺️'].map((choice, index) => (
+                    <Choice key={index} index={index} selectedChoice={selectedChoice}>
                         {choice}
                     </Choice>
                 ))}
             </div>
             <div className="controls">
-                <button disabled>Spin left</button>
-                <button disabled>Spin right</button>
+                <button onClick={() => handleKeyDown('up')}>Spin left</button>
+                <button onClick={() => handleKeyDown('down')}>Spin right</button>
             </div>
             <CircleButton handleClick={() => {}} isBlurred={false} />
         </div>
