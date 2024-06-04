@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import './styles.css';
 import './Background_toturial_page.css';
+import Choice from './Choice';
 
 function App() {
     const [selectedChoice, setSelectedChoice] = useState(0);
@@ -56,66 +57,6 @@ function App() {
             >
                 CHOOSE
             </div>
-            <style jsx>{`
-                .circle-button {
-                    background-color: rgba(232, 29, 29, 0.86);
-                    color: #000000;
-                    border-radius: 50%;
-                    width: 150px;
-                    height: 150px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 10px;
-                    font: 700 27px/129% Inter, -apple-system, Roboto, Helvetica, sans-serif;
-                    text-align: center;
-                    letter-spacing: -0.41px;
-                    cursor: pointer;
-
-                    position: fixed;
-                    bottom: 70px;
-                    right: 70px;
-                    z-index: 1000;
-                }
-
-                .text-box {
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background-color: rgba(255, 255, 255, 0.8);
-                    padding: 20px;
-                    border: 2px solid #000;
-                    border-radius: 10px;
-                    font-size: 24px;
-                    text-align: center;
-                    width: 300px;
-                    transition: background-color 0.3s, color 0.3s;
-                }
-
-                @media (max-width: 991px) {
-                    .circle-button {
-                        width: 100px;
-                        height: 100px;
-                        font-size: 20px;
-                        bottom: 10px;
-                        right: 10px;
-                    }
-
-                    .text-box {
-                        width: 250px;
-                        font-size: 20px;
-                    }
-                }
-            `}</style>
-        </div>
-    );
-}
-
-function Choice({ index, selectedChoice, children }) {
-    return (
-        <div className={`circle-choice choice${index + 1} ${selectedChoice === index ? 'selected' : ''}`}>
-            {children}
         </div>
     );
 }
