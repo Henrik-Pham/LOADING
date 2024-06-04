@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/QRcodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/vote.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/QRcodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/QRcodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

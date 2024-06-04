@@ -15,9 +15,9 @@ public class QRService {
 
     public byte[] generateVoteQRCode() {
 
-        String text = null;
+        String url = null;
         try {
-            text = getIpAddress();
+            url = getIpAddress();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -25,7 +25,7 @@ public class QRService {
         int height = 300;
         BufferedImage qrCode = null;
         try {
-            qrCode = QRcodeGenerator.generateQRCode(text, width, height);
+            qrCode = QRcodeGenerator.generateQRCode(url, width, height);
             ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
             ImageIO.write(qrCode, "png", byteStream);
             return byteStream.toByteArray();

@@ -11,10 +11,12 @@ import java.awt.image.BufferedImage;
 
 public class QRcodeGenerator {
 
-    public static BufferedImage generateQRCode(String text, int width, int height) throws WriterException {
+    public static BufferedImage generateQRCode(String url, int width, int height) throws WriterException {
+
+        //Generates a QR code with the given URL, width, and height
 
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
-        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
+        BitMatrix bitMatrix = qrCodeWriter.encode(url, BarcodeFormat.QR_CODE, width, height);
         return MatrixToImageWriter.toBufferedImage(bitMatrix);
     }
 
