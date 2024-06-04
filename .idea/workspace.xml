@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/QRcodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/vote.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mainPicture.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" afterDir="false" />
+    </list>
+    <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
+    <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/LoadingBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/LoadingBackendApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,14 +39,34 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Backen_Start" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mmmidboe"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Henrik-Pham/LOADING.git",
+    "accountId": "4ae31c52-b4aa-49b7-9b90-16836ae949c4"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -51,14 +80,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.LoadingBackendApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Backen__Continue__Marius__",
+    "javascript.nodejs.core.library.configured.version": "20.13.1",
+    "javascript.nodejs.core.library.typings.version": "20.13.0",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
@@ -67,10 +101,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mariu\Documents\BackEndWork" />
+      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\static" />
+      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates" />
       <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="LoadingBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="LoadingBackend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.loadingbackend.LoadingBackendApplication" />
@@ -78,6 +118,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -95,10 +140,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716893776985</updated>
+      <workItem from="1717505131319" duration="2233000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
