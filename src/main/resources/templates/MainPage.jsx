@@ -18,10 +18,20 @@ function Choice({ index, selectedChoice, children }) {
 }
 
 function MainPage() {
+    const host = window.location.hostname;
     const [selectedChoice, setSelectedChoice] = useState(0);
     const [isBlurred, setIsBlurred] = useState(false);
     const [timerWidth, setTimerWidth] = useState(100);
+    const [qrCodeUrl, setQrCodeUrl] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Fetch the QR code URL when the component mounts
+        fetch(`http://${host}:8080/api/qr`)
+            .then(response => response.json())
+            .then(data => setQrCodeUrl(data.qrCodeUrl))
+            .catch(error => console.error('Error fetching QR code:', error));
+    }, [host]);
 
     useEffect(() => {
         let interval;
@@ -96,6 +106,14 @@ function MainPage() {
                 <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Spin right</button>
             </div>
             <div className="text-box">
+                <div id="qr-container">
+                    {qrCodeUrl ? (
+                        <img src={qrCodeUrl} alt="QR Code" />
+                    ) : (
+                        <p>Loading QR code...</p>
+                    )}
+                        <img src={`http://${host}:8080/api/qr`}/>
+                </div>
                 {getTextForSelectedChoice(selectedChoice)}
             </div>
             <div

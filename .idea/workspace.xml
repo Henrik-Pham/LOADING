@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="updated gitignore and stuff">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
-    <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
     <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +45,6 @@
     &quot;accountId&quot;: &quot;4ae31c52-b4aa-49b7-9b90-16836ae949c4&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.gitignore">
-      <ranges>
-        <range start1="5" end1="6" start2="5" end2="6" changelist="7e02edac-9ad2-4204-a7c0-57c70fc99068" />
-        <range start1="34" end1="34" start2="34" end2="35" changelist="4bb755f4-f86e-4459-a026-43f51f1d7fd0" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -67,7 +56,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -112,7 +101,7 @@
       <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -156,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716893776985</updated>
       <workItem from="1717505131319" duration="2233000" />
-      <workItem from="1717508710260" duration="1150000" />
+      <workItem from="1717508710260" duration="2130000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />
@@ -165,7 +154,21 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1717509255379</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="updated gitignore and stuff">
+      <option name="closed" value="true" />
+      <created>1717509915886</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1717509915886</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Changes by mariu">
+      <option name="closed" value="true" />
+      <created>1717509925120</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1717509925120</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +188,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated gitignore" />
     <MESSAGE value="updated gitignore and stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore and stuff" />
+    <MESSAGE value="Changes by mariu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by mariu" />
   </component>
 </project>
