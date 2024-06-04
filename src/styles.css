@@ -92,7 +92,7 @@ button {
     cursor: pointer;
 }
 .circle-button {
-    background-color: rgba(232, 29, 29, 0.86);
+    background-color:  #e47200;
     color: #000000;
     border-radius: 50%;
     width: 150px;
@@ -152,7 +152,7 @@ button {
     top: 0;
     left: 0;
     height: 40px;
-    background-color: yellow;
+    background-color: #f1c40f;
     transition: width 1s linear;
 }
 
