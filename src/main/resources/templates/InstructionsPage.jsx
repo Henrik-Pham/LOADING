@@ -1,7 +1,7 @@
 // InstructionsPage.jsx
 import React, { useState } from 'react';
 import './styles.css';
-import backgroundImage from './images/DALL·E 2024-05-24 14.55.20 - A bright, open landscape with majestic mountains in the background. The scene is realistic with natural colors, depicting a serene outdoor environment.webp';
+import backgroundImage from './OpenLandscape.png';
 
 function InstructionsPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
