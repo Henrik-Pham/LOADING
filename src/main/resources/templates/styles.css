@@ -181,7 +181,7 @@ button {
 }
 
 .background-container {
-    background-image: url('mainPicture.webp'); /* Use the correct path to your image */
+    background-image: url('../static/mainPicture.webp'); /* Use the correct path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
