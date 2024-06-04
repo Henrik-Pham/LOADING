@@ -1,22 +1,9 @@
+// MainPage.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import './Background_toturial_page.css';
-
-function CircleButton() {
-    return (
-        <div className="circle-button" tabIndex="0" role="button">
-            CHOOSE
-        </div>
-    );
-}
-
-function Choice({ index, selectedChoice, children }) {
-    return (
-        <div className={`circle-choice choice${index + 1} ${selectedChoice === index ? 'selected' : ''}`}>
-            {children}
-        </div>
-    );
-}
+import './styles.css';
+import Choice from './Choice';
+import CircleButton from './CircleButton';
 
 function MainPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
@@ -99,15 +86,7 @@ function MainPage() {
             <div className="text-box">
                 {getTextForSelectedChoice(selectedChoice)}
             </div>
-            <div
-                className="circle-button"
-                tabIndex="0"
-                role="button"
-                onClick={handleClick}
-                disabled={isBlurred}
-            >
-                CHOOSE
-            </div>
+            <CircleButton handleClick={handleClick} isBlurred={isBlurred} />
         </div>
     );
 }

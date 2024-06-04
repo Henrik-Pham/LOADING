@@ -1,3 +1,4 @@
+// Admin.jsx
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -57,11 +58,16 @@ function Admin() {
             });
     };
 
+    const handleInstructions = () => {
+        navigate('/instructions'); // Redirect to the instructions page
+    };
+
     return (
         <div className="admin-container">
             <button onClick={handleStart}>Start</button>
             <button onClick={handleNext}>Next</button>
             <button onClick={handleStop}>Stop</button>
+            <button onClick={handleInstructions}>Instructions</button>
         </div>
     );
 }
