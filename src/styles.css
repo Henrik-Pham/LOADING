@@ -151,8 +151,8 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    height: 5px;
-    background-color: red;
+    height: 40px;
+    background-color: yellow;
     transition: width 1s linear;
 }
 
