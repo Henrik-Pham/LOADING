@@ -28,7 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+
         <entry key="$PROJECT_DIR$" value="HenrikWebsocket" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,7 +81,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.LoadingBackendApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;HenrikWebsocket&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.1&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.19&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -124,6 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="npm.dev" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>

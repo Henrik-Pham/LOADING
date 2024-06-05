@@ -13,6 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/admin" element={<Admin />} />
+
                 <Route path="/bigscreen" element={<BigScreen/>} />
             </Routes>
         </Router>
