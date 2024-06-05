@@ -5,6 +5,7 @@ import Choice from './Choice';
 import CircleButton from './CircleButton';
 import backgroundImage from './images/DALL·E 2024-05-24 14.55.20 - A bright, open landscape with majestic mountains in the background. The scene is realistic with natural colors, depicting a serene outdoor environment.webp';
 
+
 function InstructionsPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
 
@@ -36,8 +37,8 @@ function InstructionsPage() {
                 ))}
             </div>
             <div className="controls">
-                <button onClick={() => handleKeyDown('up')}>Spin left</button>
-                <button onClick={() => handleKeyDown('down')}>Spin right</button>
+                <button className="controls-buttons" onClick={() => handleKeyDown('up')}>Spin left</button>
+                <button className="controls-buttons" onClick={() => handleKeyDown('down')}>Spin right</button>
             </div>
             <CircleButton handleClick={() => {}} isBlurred={false} />
         </div>

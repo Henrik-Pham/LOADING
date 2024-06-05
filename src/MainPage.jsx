@@ -5,6 +5,8 @@ import './styles.css';
 import Choice from './Choice';
 import CircleButton from './CircleButton';
 import backgroundImage from './images/mainPicture.webp';
+import ItemInfo from "./components/items/ItemInfo.jsx";
+import {INFO_BOX_CONTENT} from "./data/infoBoxData.js";
 
 function MainPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
@@ -59,9 +61,9 @@ function MainPage() {
     const getTextForSelectedChoice = (index) => {
         switch (index) {
             case 0:
-                return 'Option 1: Description for choice 1';
+                return <ItemInfo {...INFO_BOX_CONTENT[0]}/>;
             case 1:
-                return 'Option 2: Description for choice 2';
+                return <ItemInfo {...INFO_BOX_CONTENT[1]}/>;
             case 2:
                 return 'Option 3: Description for choice 3';
             case 3:

@@ -32,17 +32,21 @@ body {
 }
 
 .circle-container {
-    width: 300px;
-    height: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    max-width: 30vw;
+    max-height: 30vw;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #000;
-    display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    bottom: 20px;
-    left: 12%;
-    transform: translateX(-50%);
+    bottom: 1rem;
+    left: 1rem;
+
 }
 
 .circle-choice {
@@ -79,22 +83,31 @@ body {
 }
 
 .controls {
-    position: absolute;
-    left: 30%;
-    transform: translateX(-50%);
-    bottom: 100px;
+    border: black 1rem;
+    background-color: red;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 3vh;
+    left: 25vw;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
     opacity: 0.7;
+    width: 15vw;
+    min-width: 10rem;
+
 }
+
 
 button {
     margin: 10px 0;
-    padding: 10px 20px;
+    padding:1rem;
     font-size: 16px;
     cursor: pointer;
-    width: 150px; /* Ensure both buttons have the same width */
+
+
 }
 
 .circle-button {
@@ -169,7 +182,7 @@ button {
     height: 100vh;
 }
 
-.admin-container button {
+.admin-container {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
@@ -198,4 +211,19 @@ button {
     top: 10%;
     left: 55%;
     transform: translateX(-50%);
+}
+
+.item-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.item-info-img {
+    width: 18vw;
+    min-width:13rem;
+    border-radius: 5%;
 }
