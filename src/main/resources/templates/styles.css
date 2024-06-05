@@ -32,7 +32,7 @@ body {
     overflow: hidden;
     border: 2px solid #000;
     flex-wrap: wrap;
-    bottom: 1rem;
+    bottom: 12rem;
     left: 1rem;
 
 }
@@ -84,14 +84,13 @@ body {
 
 .controls {
     border: black 1rem;
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 3vh;
-    left: 25vw;
-    flex-direction: column;
+    bottom: 7vh;
+    left: 3.85vw;
+    flex-direction: row;
     padding: 1rem;
     gap: 1rem;
     opacity: 0.7;
