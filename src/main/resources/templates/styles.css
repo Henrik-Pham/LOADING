@@ -21,14 +21,21 @@ body {
 }
 
 .circle-container {
-    position: fixed;
-    width: 300px;
-    height: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    max-width: 30vw;
+    max-height: 30vw;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #000;
-    bottom: 70px;
-    left: 70px;
+    flex-wrap: wrap;
+    bottom: 1rem;
+    left: 1rem;
+
 }
 
 .circle-choice {
