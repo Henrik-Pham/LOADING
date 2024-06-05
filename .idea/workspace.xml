@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fixed comuucation" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fixed comuucation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
+    </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
-    <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
-    </list>
+    <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="Changes by Martins Monster" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +154,7 @@
       <updated>1716893776985</updated>
       <workItem from="1717505131319" duration="2233000" />
       <workItem from="1717508710260" duration="2130000" />
-      <workItem from="1717586778352" duration="314000" />
+      <workItem from="1717586778352" duration="1293000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />
@@ -199,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717587056321</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changes by Martins Monster">
+      <option name="closed" value="true" />
+      <created>1717587310485</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717587310485</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +233,8 @@
     <MESSAGE value="Put in InsructionPage" />
     <MESSAGE value="Fixed blur" />
     <MESSAGE value="Fixed comuucation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed comuucation" />
+    <MESSAGE value="Changes by Martins Monster" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Martins Monster" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
