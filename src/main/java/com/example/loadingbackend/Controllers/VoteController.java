@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 
 @RequestMapping("api/vote")
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:5177")
 public class VoteController {
 
     //Declares the service
@@ -24,6 +24,7 @@ public class VoteController {
         this.voteService = voteService;
     }
 
+    @CrossOrigin
     //Post mapping which adds a vote to the vote service
     //Note that the return value of the function is what the server will return to the client
     @PostMapping
