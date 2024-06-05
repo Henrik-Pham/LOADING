@@ -24,6 +24,7 @@ function MainPage() {
     const [timerWidth, setTimerWidth] = useState(100);
     const [qrCodeUrl, setQrCodeUrl] = useState('');
     const navigate = useNavigate();
+/*
 
     useEffect(() => {
         // Fetch the QR code URL when the component mounts
@@ -32,6 +33,7 @@ function MainPage() {
             .then(data => setQrCodeUrl(data.qrCodeUrl))
             .catch(error => console.error('Error fetching QR code:', error));
     }, [host]);
+ */
 
     useEffect(() => {
         let interval;
