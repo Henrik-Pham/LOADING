@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles.css"; // Adjust relative path
 import MainPage from "./MainPage"; // Adjust relative path
 import Admin from "./Admin"; // Adjust relative path
+import QRPage from "./QRPage.jsx"
 import InstructionsPage from './InstructionsPage'; // Ensure this path is correct
 
 function App() {
@@ -19,6 +20,6 @@ function App() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<QRPage />);
 
 export default App;
