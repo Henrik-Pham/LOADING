@@ -57,7 +57,7 @@ function MainPage() {
         fetch(`http://${host}:8080/api/vote`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(voteModel),
+            body: JSON.stringify({id: Choice.id}),
         })
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
