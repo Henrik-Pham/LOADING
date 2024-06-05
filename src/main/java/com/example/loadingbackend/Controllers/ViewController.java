@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.google.gson.Gson;
 
-//import static com.example.loadingbackend.Controllers.VoteController.gson;
 
-//import static com.example.loadingbackend.Controllers.VoteController.gson;
 
 @RequestMapping("/")
 @Controller
