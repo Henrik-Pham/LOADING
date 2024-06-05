@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/vote.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/vote.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
@@ -28,9 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
-        <entry key="$PROJECT_DIR$" value="HenrikWebsocket" />
-
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,12 +46,12 @@
     &quot;assignee&quot;: &quot;mmmidboe&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Henrik-Pham/LOADING.git&quot;,
-    &quot;accountId&quot;: &quot;4ae31c52-b4aa-49b7-9b90-16836ae949c4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Henrik-Pham/LOADING.git",
+    "accountId": "7b2e9cb0-d6b4-44dd-830a-b743f7c74d80"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -81,7 +86,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.LoadingBackendApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;HenrikfromMerge&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.1&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.19&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -96,14 +101,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\static" />
       <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\templates" />
-      <recent name="C:\Users\mariu\Documents\BackEndWork" />
-      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates" />
-      <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -136,7 +141,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-f0552fc0" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -151,6 +157,7 @@
       <workItem from="1717505131319" duration="2233000" />
       <workItem from="1717508710260" duration="2130000" />
       <workItem from="1717578337512" duration="3437000" />
+      <workItem from="1717591120418" duration="967000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />

@@ -34,13 +34,13 @@ public class QRService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public String getIpAddress() throws IOException {
-    InetAddress ip = InetAddress.getLocalHost();
-    String ipAddress = ip.getHostAddress();
-    ipAddress = "http://" + ipAddress + ":8080" + "/vote";
-    return ipAddress;
+        InetAddress ip = InetAddress.getLocalHost();
+        String ipAddress = ip.getHostAddress();
+        ipAddress = "http://" + ipAddress + ":5173" + "/introduction"; // Target route
+        return ipAddress;
     }
+
 }

@@ -1,15 +1,15 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import alias from '@rollup/plugin-alias';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react(), alias({
-    entries: [
-      { find: '@', replacement: path.resolve(__dirname, 'src') },
-    ],
-  })],
+  root: path.resolve(__dirname, 'src/main/resources/templates'),
+  plugins: [react()],
+  server: {
+    // If there are specific server settings like proxies, define them here
+  },
   build: {
-    outDir: 'dist',
+    outDir: path.resolve(__dirname, 'dist'), // Adjust this path as needed
   },
 });
