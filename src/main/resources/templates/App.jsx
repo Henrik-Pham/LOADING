@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles.css"; // Adjust relative path
 import MainPage from "./MainPage"; // Adjust relative path
 import Admin from "./Admin"; // Adjust relative path
-import InstructionsPage from './InstructionsPage'; // Ensure this path is correct
+import InstructionsPage from './InstructionsPage';
+import BigScreen from "./BigScreen.jsx";
 
 function App() {
     return (
@@ -12,7 +13,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/admin" element={<Admin />} />
-                <Route path="/instruction" element={<InstructionsPage />} /> {/* Add this line */}
+
+                <Route path="/bigscreen" element={<BigScreen/>} />
             </Routes>
         </Router>
     );
