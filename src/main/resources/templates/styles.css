@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -35,9 +34,7 @@ body {
     flex-wrap: wrap;
     bottom: 1rem;
     left: 1rem;
-
 }
-
 
 .circle-choice {
     position: absolute;
@@ -99,6 +96,7 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+
 .circle-button {
     background-color:  #e47200;
     color: #000000;
@@ -113,7 +111,6 @@ button {
     text-align: center;
     letter-spacing: -0.41px;
     cursor: pointer;
-
     position: fixed;
     bottom: 70px;
     right: 70px;
@@ -150,9 +147,17 @@ button {
     }
 }
 
-.background-container.blur {
-    filter: blur(5px);
-    pointer-events: none;
+/* Dark overlay effect */
+.background-container.blur::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Adjust opacity for desired darkness */
+    z-index: 1001; /* Ensure it covers the entire background */
+    pointer-events: none; /* Allow interactions with elements above */
 }
 
 .timer-bar {
@@ -162,6 +167,7 @@ button {
     height: 40px;
     background-color: #f1c40f;
     transition: width 1s linear;
+    z-index: 999; /* Ensure it stays above the overlay */
 }
 
 .admin-container {
@@ -202,7 +208,6 @@ button {
     padding: 0;
 }
 
-
 .instructions-box {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -218,3 +223,7 @@ button {
     transform: translateX(-50%);
 }
 
+/* Additional class to disable interaction when blurred */
+.background-container.blur {
+    pointer-events: none;
+}

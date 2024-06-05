@@ -22,16 +22,7 @@ function MainPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
     const [isBlurred, setIsBlurred] = useState(false);
     const [timerWidth, setTimerWidth] = useState(100);
-    const [qrCodeUrl, setQrCodeUrl] = useState('');
     const navigate = useNavigate();
-
-    useEffect(() => {
-        // Fetch the QR code URL when the component mounts
-        fetch(`http://${host}:8080/api/qr`)
-            .then(response => response.json())
-            .then(data => setQrCodeUrl(data.qrCodeUrl))
-            .catch(error => console.error('Error fetching QR code:', error));
-    }, [host]);
 
     useEffect(() => {
         let interval;
@@ -60,20 +51,33 @@ function MainPage() {
     };
 
     const handleClick = () => {
-        fetch('http://localhost:3001/api/data', {
+        const voteModel = {
+            id: Math.floor(Math.random() * 10000), // Temporary ID
+            choice: {
+                id: selectedChoice
+            }
+        };
+
+        fetch(`http://${host}:8080/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ choice: selectedChoice }),
+            body: JSON.stringify(voteModel),
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 console.log('Success:', data);
-                alert('Data sent successfully!');
+                alert('Vote sent successfully!');
             })
             .catch((error) => {
                 console.error('Error:', error);
+                alert('Error sending vote. Please try again.');
             });
     };
 
@@ -106,14 +110,6 @@ function MainPage() {
                 <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Spin right</button>
             </div>
             <div className="text-box">
-                <div id="qr-container">
-                    {qrCodeUrl ? (
-                        <img src={qrCodeUrl} alt="QR Code" />
-                    ) : (
-                        <p>Loading QR code...</p>
-                    )}
-                        <img src={`http://${host}:8080/api/qr`}/>
-                </div>
                 {getTextForSelectedChoice(selectedChoice)}
             </div>
             <div
