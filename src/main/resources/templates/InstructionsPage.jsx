@@ -36,11 +36,11 @@ function InstructionsPage() {
                 <h1>Instruksjoner</h1>
                 <p>Velkommen til spillet! Her er hvordan du spiller:</p>
                 <ol>
-                    <li>Bruk pilknappene for å rotere valgene.</li>
+                    <li>Bruk "spin" tastene for å rotere valgene.</li>
                     <li>Trykk på "CHOOSE" knappen for å bekrefte valget ditt.</li>
                     <li>Vent til admin starter spillet for å begynne.</li>
                 </ol>
-                <p>Ha en SPA opplevelse!</p>
+                <p>Ha en fet opplevelse!</p>
             </div>
             <div className="circle-container">
                 {['👆', '🎮', '🎥', '🗺️'].map((choice, index) => (

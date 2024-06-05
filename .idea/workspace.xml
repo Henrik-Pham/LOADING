@@ -7,6 +7,7 @@
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
@@ -61,7 +62,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2h5pQLs8IwTFQmitG3SyOwClmqG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -78,7 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.LoadingBackendApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "main__trygve",
     "javascript.nodejs.core.library.configured.version": "18.17.1",
     "javascript.nodejs.core.library.typings.version": "18.17.19",
     "kotlin-language-version-configured": "true",
