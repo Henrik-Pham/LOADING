@@ -14,6 +14,22 @@ function InstructionsPage() {
         }
     };
 
+    const Choice = ({ index, selectedChoice, children }) => {
+        return (
+            <div className={`circle-choice choice${index + 1} ${selectedChoice === index ? 'selected' : ''}`}>
+                {children}
+            </div>
+        );
+    };
+
+    const CircleButton = ({ handleClick, isBlurred }) => {
+        return (
+            <div className={`circle-button ${isBlurred ? 'blurred' : ''}`} tabIndex="0" role="button" onClick={handleClick}>
+                CHOOSE
+            </div>
+        );
+    };
+
     return (
         <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="instructions-box">
