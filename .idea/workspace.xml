@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/components/ItemInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/FU_FPV.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/Sword_Cave.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/infoBoxData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Some content in info-box on MainPage. ItemInfo.jsx component in separate folder for components, array of objects in infoBoxData.js. Some tweaks on css, but not finished. Also added images in separate folder (images)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
@@ -159,7 +153,7 @@
       <updated>1716893776985</updated>
       <workItem from="1717505131319" duration="2233000" />
       <workItem from="1717508710260" duration="2130000" />
-      <workItem from="1717580852113" duration="4178000" />
+      <workItem from="1717580852113" duration="7883000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />
@@ -182,7 +176,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1717509925120</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Some content in info-box on MainPage. ItemInfo.jsx component in separate folder for components, array of objects in infoBoxData.js. Some tweaks on css, but not finished. Also added images in separate folder (images)">
+      <option name="closed" value="true" />
+      <created>1717587731293</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1717587731293</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +205,7 @@
     <MESSAGE value="updated gitignore and stuff" />
     <MESSAGE value="Changes by mariu" />
     <MESSAGE value="Put in InsructionPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put in InsructionPage" />
+    <MESSAGE value="Some content in info-box on MainPage. ItemInfo.jsx component in separate folder for components, array of objects in infoBoxData.js. Some tweaks on css, but not finished. Also added images in separate folder (images)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some content in info-box on MainPage. ItemInfo.jsx component in separate folder for components, array of objects in infoBoxData.js. Some tweaks on css, but not finished. Also added images in separate folder (images)" />
   </component>
 </project>

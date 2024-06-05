@@ -138,11 +138,56 @@ button {
     padding: 20px;
     border: 2px solid #000;
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 15px;
     text-align: center;
-    width: 300px;
     transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
+    overflow: auto;
+    height: 60vh;
+    width: 30vw;
+    max-height: 20rem;
 }
+
+.item-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.item-info-img {
+    width: 18vw;
+    min-width:13rem;
+    border-radius: 5%;
+}
+
+@media (min-width: 1000px){
+    .text-box{
+        height: 35vh;
+        width: 40vw;
+        min-width: 25rem;
+        min-height: 15rem;
+        left: 50vw;
+        font-size: 20px;
+    }
+
+    .item-info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .item-info-img {
+        width: 18vw;
+        min-width:13rem;
+        border-radius: 5%;
+    }
+
+}
+
 
 @media (max-width: 991px) {
     .circle-button {
@@ -153,10 +198,76 @@ button {
         right: 10px;
     }
 
-    .text-box {
-        width: 250px;
-        font-size: 20px;
+}
+
+@media (max-width: 915px){
+    .text-box{
+        width: 40vw;
+        min-width: 25rem;
+        left: 28rem;
     }
+
+    .item-info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .item-info-img {
+        width: 18vw;
+        min-width:13rem;
+        border-radius: 5%;
+    }
+
+}
+
+@media (max-width: 800px){
+    .text-box{
+        width: 40vw;
+        min-width: 25rem;
+        left: 26rem;
+    }
+
+    .item-info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .item-info-img {
+        width: 18vw;
+        min-width:13rem;
+        border-radius: 5%;
+    }
+
+}
+
+@media (max-width: 750px){
+    .text-box{
+        width: 40vw;
+        min-width: 25rem;
+        left: 24rem;
+        height: 12rem;
+        font-size: 10px;
+    }
+
+    .item-info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .item-info-img {
+        width: 8vw;
+        border-radius: 5%;
+    }
+
 }
 
 .background-container.blur {
@@ -227,17 +338,4 @@ button {
     transform: translateX(-50%);
 }
 
-.item-info-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
-
-}
-
-.item-info-img {
-    width: 18vw;
-    min-width:13rem;
-    border-radius: 5%;
-}
