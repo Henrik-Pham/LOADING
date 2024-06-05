@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <label for="id">id:</label><br>
+        <input type="text" id="id" name="id"><br>
+        <label for="vote">vote:</label><br>
+        <input type="text" id="vote" name="vote"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const host = window.location.hostname;
+        const id = document.getElementById('id').value;
+        const vote = document.getElementById('vote').value;
+        fetch(`http://${host}:8080/api/vote`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({id: id, vote: vote}),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    });
+
+
+</script>
+</html>
