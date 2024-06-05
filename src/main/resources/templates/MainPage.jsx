@@ -43,57 +43,44 @@ function MainPage() {
     }, [isBlurred]);
 
     const handleKeyDown = (rotation) => {
-        if (rotation === 'up') {
-            setSelectedChoice((previousChoice) => (previousChoice - 1 + 4) % 4);
-        } else if (rotation === 'down') {
-            setSelectedChoice((previousChoice) => (previousChoice + 1) % 4);
-        }
+        setSelectedChoice((previousChoice) =>
+            rotation === 'up' ? (previousChoice - 1 + 4) % 4 : (previousChoice + 1) % 4
+        );
     };
 
     const handleClick = () => {
         const voteModel = {
-            id: Math.floor(Math.random() * 10000), // Temporary ID
-            choice: {
-                id: selectedChoice
-            }
+            id: Math.floor(Math.random() * 10000),
+            choice: { id: selectedChoice }
         };
 
         fetch(`http://${host}:8080/api/vote`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(voteModel),
         })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+                if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
             })
             .then(data => {
                 console.log('Success:', data);
                 alert('Vote sent successfully!');
             })
-            .catch((error) => {
+            .catch(error => {
                 console.error('Error:', error);
                 alert('Error sending vote. Please try again.');
             });
     };
 
     const getTextForSelectedChoice = (index) => {
-        switch (index) {
-            case 0:
-                return 'Option 1: Description for choice 1';
-            case 1:
-                return 'Option 2: Description for choice 2';
-            case 2:
-                return 'Option 3: Description for choice 3';
-            case 3:
-                return 'Option 4: Description for choice 4';
-            default:
-                return 'Click a button to see the options';
-        }
+        const descriptions = [
+            'Option 1: Description for choice 1',
+            'Option 2: Description for choice 2',
+            'Option 3: Description for choice 3',
+            'Option 4: Description for choice 4',
+        ];
+        return descriptions[index] || 'Click a button to see the options';
     };
 
     return (
@@ -109,16 +96,8 @@ function MainPage() {
                 <button onClick={() => handleKeyDown('up')} disabled={isBlurred}>Spin left</button>
                 <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Spin right</button>
             </div>
-            <div className="text-box">
-                {getTextForSelectedChoice(selectedChoice)}
-            </div>
-            <div
-                className="circle-button"
-                tabIndex="0"
-                role="button"
-                onClick={handleClick}
-                disabled={isBlurred}
-            >
+            <div className="text-box">{getTextForSelectedChoice(selectedChoice)}</div>
+            <div className="circle-button" tabIndex="0" role="button" onClick={handleClick} disabled={isBlurred}>
                 CHOOSE
             </div>
         </div>
