@@ -5,7 +5,24 @@ function Admin() {
     const navigate = useNavigate();
 
     const handleStart = () => {
-        fetch('http://localhost:8080/api/admin/start', {
+       /* fetch('http://localhost:8080/api/admin/start', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ action: 'start' }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Start action successful:', data);
+                navigate('/'); // Redirect to the main page
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+        */
+        fetch(`http://${host}:8080/start`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

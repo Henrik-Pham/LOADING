@@ -1,8 +1,10 @@
 package com.example.loadingbackend.Controllers;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/")
@@ -26,5 +28,11 @@ public class ViewController {
     //css and other resources are stored in the resources/static folder
     public String getVote() {
         return "vote";
+    }
+
+    @PostMapping("/start")
+    public ResponseEntity<String> startProcess() {
+        // Here you can add any logic you need to start the process
+        return ResponseEntity.ok("Process started");
     }
 }
