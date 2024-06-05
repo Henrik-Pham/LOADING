@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 function Admin() {
     const navigate = useNavigate();
+    const host = window.location.hostname;
+    console.log(host);
 
     const handleStart = () => {
        /* fetch('http://localhost:8080/api/admin/start', {
@@ -32,7 +34,7 @@ function Admin() {
             .then(response => response.json())
             .then(data => {
                 console.log('Start action successful:', data);
-                navigate('/'); // Redirect to the main page
+                //navigate('/'); // Redirect to the main page
             })
             .catch((error) => {
                 console.error('Error:', error);

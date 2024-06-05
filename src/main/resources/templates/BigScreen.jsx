@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+    import { useEffect, useState } from 'react';
 
 function BigScreen() {
 
     const host = window.location.hostname;
     //const started = false;
 
-    import { useEffect, useState } from 'react';
 
 
 
@@ -14,15 +14,26 @@ function BigScreen() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            fetch(`http://${host}:8080/start`)
+            fetch(`http://${host}:8080/start`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                //body: JSON.stringify({ action: 'start' }),
+            })
+
                 .then(response => response.json())
                 .then(data => {
                     if (data === 'Process started') {
                         setStarted(true);
+                        console.log('Process started');
+                    }else if (data === 'Process not started'){
+                        console.log('Process not started');
                     }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
+
                 });
         }, 1000); // Poll every 1 second
 
@@ -40,6 +51,12 @@ function BigScreen() {
             );
         }
     };
+
+    return (
+        <div>
+            {handleStart()}
+        </div>
+    );
 /*
     const handleStart = () => {
 

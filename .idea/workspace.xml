@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" afterDir="false" />
@@ -31,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Backen_Start" />
+        <entry key="$PROJECT_DIR$" value="HenrikWebsocket" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +103,7 @@
       <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -149,7 +148,7 @@
       <updated>1716893776985</updated>
       <workItem from="1717505131319" duration="2233000" />
       <workItem from="1717508710260" duration="2130000" />
-      <workItem from="1717578337512" duration="368000" />
+      <workItem from="1717578337512" duration="2986000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />
