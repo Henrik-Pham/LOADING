@@ -215,12 +215,12 @@ button {
 h1 {
     position: absolute;
     top: 9%;
-    left: 70%;
+    left: 68%;
     transform: translateX(-50%);
     font-size: 7em;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(270deg, #ffffff, #cccccc, #999999, #666666, #cccccc, #ffffff);
+    background: linear-gradient(270deg, #ffffff, #cccccc, #999999, #c6e5ac, #cccccc, #ffffff);
     background-size: 600% 600%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
