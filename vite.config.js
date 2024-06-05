@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     // If there are specific server settings like proxies, define them here
+    host: '0.0.0.0',
   },
   build: {
     outDir: path.resolve(__dirname, 'dist'), // Adjust this path as needed
