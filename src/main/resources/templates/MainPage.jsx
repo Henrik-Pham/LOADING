@@ -104,8 +104,8 @@ function MainPage() {
                 <Choice index={3} selectedChoice={selectedChoice}>🗺️</Choice>
             </div>
             <div className="controls">
-                <button onClick={() => handleKeyDown('up')} disabled={isBlurred}>Spin left</button>
-                <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Spin right</button>
+                <button onClick={() => handleKeyDown('up')} disabled={isBlurred}>Left</button>
+                <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Right</button>
             </div>
             <div className="text-box">{getTextForSelectedChoice(selectedChoice)}</div>
             <div className="circle-button" tabIndex="0" role="button" onClick={handleClick} disabled={isBlurred}>
