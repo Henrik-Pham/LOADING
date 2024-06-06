@@ -22,18 +22,27 @@ function MainPage() {
     const [selectedChoice, setSelectedChoice] = useState(0);
     const [isBlurred, setIsBlurred] = useState(false);
     const [timerWidth, setTimerWidth] = useState(100);
-    const [qrCodeUrl, setQrCodeUrl] = useState('');
     const navigate = useNavigate();
-/*
 
     useEffect(() => {
-        // Fetch the QR code URL when the component mounts
-        fetch(`http://${host}:8080/api/qr`)
-            .then(response => response.json())
-            .then(data => setQrCodeUrl(data.qrCodeUrl))
-            .catch(error => console.error('Error fetching QR code:', error));
+        // Connect to WebSocket server for real-time updates
+        const socket = new WebSocket(`ws://${host}:8080`);
+
+        socket.onmessage = (event) => {
+            const message = JSON.parse(event.data);
+            if (message.action === 'next') {
+                window.location.reload(); // Reload the page on 'next' action
+            }
+        };
+
+        socket.onerror = (error) => {
+            console.error('WebSocket error:', error);
+        };
+
+        return () => {
+            socket.close();
+        };
     }, [host]);
- */
 
     useEffect(() => {
         let interval;
@@ -61,13 +70,14 @@ function MainPage() {
         }
     };
 
+    var math = Math.random()
     const handleClick = () => {
-        fetch('http://localhost:3001/api/data', {
+        fetch(`http://${host}:8080/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ choice: selectedChoice }),
+            body: JSON.stringify({ id: math }),
         })
             .then(response => response.json())
             .then(data => {
@@ -107,7 +117,7 @@ function MainPage() {
                 <button onClick={() => handleKeyDown('up')} disabled={isBlurred}>Left</button>
                 <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Right</button>
             </div>
-            <div className="text-box">{getTextForSelectedChoice(selectedChoice)}</div>
+            <div className="instructions-box">{getTextForSelectedChoice(selectedChoice)}</div>
             <div className="circle-button" tabIndex="0" role="button" onClick={handleClick} disabled={isBlurred}>
                 CHOOSE
             </div>

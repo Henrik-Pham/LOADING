@@ -4,10 +4,8 @@ import { useNavigate } from "react-router-dom";
 function Admin() {
     const navigate = useNavigate();
     const host = window.location.hostname;
-    console.log(host);
 
     const handleGenerateQR = () => {
-
         fetch(`http://${host}:8080/start`, {
             method: 'POST',
             headers: {
@@ -35,13 +33,11 @@ function Admin() {
             .then(response => response.json())
             .then(data => {
                 console.log('Start action successful:', data);
-                navigate('/'); // Redirect to the main page
+                navigate('/main'); // Redirect to the main page
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
-
-
     };
 
     const handleNext = () => {
@@ -55,7 +51,7 @@ function Admin() {
             .then(response => response.json())
             .then(data => {
                 console.log('Next action successful:', data);
-                navigate('/'); // Redirect to the main page and reload it
+                window.location.reload(); // Reload the main page
             })
             .catch((error) => {
                 console.error('Error:', error);
