@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -139,6 +140,20 @@ button {
     width: 50vw;
     max-width: 80vw;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.item-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.item-info-img {
+    width: 18vw;
+    min-width:13rem;
+    border-radius: 5%;
 }
 
 @media (max-width: 991px) {
