@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ItemInfo from "../../../contexts/ItemInfo.jsx";
+import {INFO_BOX_CONTENT} from "../../../data/infoBoxData.js";
 
 function CircleButton() {
     return (
@@ -74,13 +76,18 @@ function MainPage() {
     };
 
     const getTextForSelectedChoice = (index) => {
-        const descriptions = [
-            'Option 1: Description for choice 1',
-            'Option 2: Description for choice 2',
-            'Option 3: Description for choice 3',
-            'Option 4: Description for choice 4',
-        ];
-        return descriptions[index] || 'Click a button to see the options';
+        switch (index) {
+            case 0:
+                return <ItemInfo {...INFO_BOX_CONTENT[0]}/>;
+            case 1:
+                return <ItemInfo {...INFO_BOX_CONTENT[1]}/>;
+            case 2:
+                return 'Option 3: Description for choice 3';
+            case 3:
+                return 'Option 4: Description for choice 4';
+            default:
+                return 'Click a button to see the options';
+        }
     };
 
     return (

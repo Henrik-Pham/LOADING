@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fixed comuucation">
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="CSS, favicon, tab-title, classnames, ItemInfo, infoBoxData, icon-images (public)">
+      <change afterPath="$PROJECT_DIR$/src/contexts/ItemInfo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/FU_FPV.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Sword_Cave.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
@@ -28,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="main_Marius" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,6 +88,7 @@
     "javascript.nodejs.core.library.configured.version": "20.13.1",
     "javascript.nodejs.core.library.typings.version": "20.13.0",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/christopherloyd/Desktop/IntelliJ_SMIDIG/loading_smidig/src/images",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -98,6 +104,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\static" />
       <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\templates" />
@@ -109,6 +118,19 @@
   <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="LoadingBackend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="LoadingBackend" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="LoadingBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="LoadingBackend" />
@@ -234,7 +256,8 @@
     <MESSAGE value="Fixed blur" />
     <MESSAGE value="Fixed comuucation" />
     <MESSAGE value="Changes by Martins Monster" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Martins Monster" />
+    <MESSAGE value="CSS, favicon, tab-title, classnames, ItemInfo, infoBoxData, icon-images (public)" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS, favicon, tab-title, classnames, ItemInfo, infoBoxData, icon-images (public)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
