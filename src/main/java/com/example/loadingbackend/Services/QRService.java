@@ -50,7 +50,7 @@ public class QRService {
                     if (!inetAddress.isLoopbackAddress() && inetAddress.isSiteLocalAddress()) {
                         // Site local address is typically what you want in a local network
                         System.out.println(inetAddress);
-                        return "http://" + inetAddress.getHostAddress() + ":5173/";
+                        return "http://" + inetAddress.getHostAddress() + ":5173/instruction";
                     }
                 }
             }
