@@ -6,7 +6,7 @@ const RotateScreen = ({ onComplete }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onComplete();
-        }, 4000); // 4 seconds to allow for blinking three times
+        }, 6000); // 4 seconds to allow for blinking three times
 
         return () => clearTimeout(timer);
     }, [onComplete]);

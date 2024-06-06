@@ -351,14 +351,14 @@ h1 {
     height: 100vh;
     width: 100vw;
     background-color: black;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
 }
 
 .rotate-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensure the image fits within the container */
-    animation: blink 1s infinite;
+    object-fit: contain;
+    animation: blink 3s infinite;
 }
 
 @keyframes blink {
