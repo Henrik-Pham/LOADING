@@ -70,13 +70,14 @@ function MainPage() {
         }
     };
 
+    var math = Math.random()
     const handleClick = () => {
-        fetch('http://localhost:3001/api/data', {
+        fetch(`http://${host}:8080/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ choice: selectedChoice }),
+            body: JSON.stringify({ id: math }),
         })
             .then(response => response.json())
             .then(data => {

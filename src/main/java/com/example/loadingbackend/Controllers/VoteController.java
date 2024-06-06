@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 
 @RequestMapping("api/vote")
 @RestController
-@CrossOrigin(origins = "http://localhost:5177")
+@CrossOrigin(origins = "*")
 public class VoteController {
 
     //Declares the service
