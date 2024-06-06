@@ -200,7 +200,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717684925145</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fikset landscape">
+      <option name="closed" value="true" />
+      <created>1717685014494</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717685014494</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fikset landscape">
+      <option name="closed" value="true" />
+      <created>1717685137444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717685137444</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
