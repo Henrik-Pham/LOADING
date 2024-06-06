@@ -29,6 +29,10 @@ function InstructionsPage() {
         );
     };
 
+    const handleButtonClick = () => {
+        alert(`You locked the answer: ${['👆', '🎮', '🎥', '🗺️'][selectedChoice]}`);
+    };
+
     return (
         <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="instructions-box">
@@ -52,7 +56,7 @@ function InstructionsPage() {
                 <button onClick={() => handleKeyDown('up')}>Left</button>
                 <button onClick={() => handleKeyDown('down')}>Right</button>
             </div>
-            <CircleButton handleClick={() => {}} isBlurred={false} />
+            <CircleButton handleClick={handleButtonClick} isBlurred={false} />
         </div>
     );
 }

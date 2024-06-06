@@ -40,7 +40,7 @@ public class QRService {
     public String getIpAddress() throws IOException {
     InetAddress ip = InetAddress.getLocalHost();
     String ipAddress = ip.getHostAddress();
-    ipAddress = "http://" + ipAddress + ":8080" + "/vote";
+    ipAddress = "http://" + ipAddress + ":5173" + "/instruction";
     return ipAddress;
     }
 }
