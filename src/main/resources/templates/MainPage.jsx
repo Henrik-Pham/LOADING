@@ -82,9 +82,9 @@ function MainPage() {
             case 1:
                 return <ItemInfo {...INFO_BOX_CONTENT[1]}/>;
             case 2:
-                return 'Option 3: Description for choice 3';
+                return <ItemInfo {...INFO_BOX_CONTENT[2]}/>;
             case 3:
-                return 'Option 4: Description for choice 4';
+                return <ItemInfo {...INFO_BOX_CONTENT[3]}/>;
             default:
                 return 'Click a button to see the options';
         }

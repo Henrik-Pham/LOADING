@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="CSS, favicon, tab-title, classnames, ItemInfo, infoBoxData, icon-images (public)">
-      <change afterPath="$PROJECT_DIR$/src/contexts/ItemInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/FU_FPV.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Sword_Cave.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Added contents of text-box (valg på main page). Also changed the title to &quot;LOADING&quot; (in the tab). Should find a favicon to add aswell.">
+      <change afterPath="$PROJECT_DIR$/src/images/Sharp_axe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/TP_Chaos_Woods_Troll.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
@@ -84,7 +80,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.LoadingBackendApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main__Marius",
+    "git-widget-placeholder": "main__Marius__chris",
     "javascript.nodejs.core.library.configured.version": "20.13.1",
     "javascript.nodejs.core.library.typings.version": "20.13.0",
     "kotlin-language-version-configured": "true",
@@ -231,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717587310485</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Added contents of text-box (valg på main page). Also changed the title to &quot;LOADING&quot; (in the tab). Should find a favicon to add aswell.">
+      <option name="closed" value="true" />
+      <created>1717662410893</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1717662410893</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +260,8 @@
     <MESSAGE value="Fixed comuucation" />
     <MESSAGE value="Changes by Martins Monster" />
     <MESSAGE value="CSS, favicon, tab-title, classnames, ItemInfo, infoBoxData, icon-images (public)" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS, favicon, tab-title, classnames, ItemInfo, infoBoxData, icon-images (public)" />
+    <MESSAGE value="Added contents of text-box (valg på main page). Also changed the title to &quot;LOADING&quot; (in the tab). Should find a favicon to add aswell." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added contents of text-box (valg på main page). Also changed the title to &quot;LOADING&quot; (in the tab). Should find a favicon to add aswell." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
