@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './styles.css';
+import rotateImage from './images/rotate_your_screen.png'; // Adjust the path as necessary
 
 const RotateScreen = ({ onComplete }) => {
     useEffect(() => {
@@ -12,7 +13,7 @@ const RotateScreen = ({ onComplete }) => {
 
     return (
         <div className="rotate-screen">
-            <div className="rotate-message">ROTATE YOUR SCREEN</div>
+            <img src={rotateImage} alt="Rotate Your Screen" className="rotate-image" />
         </div>
     );
 };

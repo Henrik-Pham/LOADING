@@ -6,10 +6,10 @@ import RotateScreen from './RotateScreen';
 function InstructionsPage() {
     const [showInstructions, setShowInstructions] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
     const [selectedChoice, setSelectedChoice] = useState(0);
 
     useEffect(() => {
-        // Check if the user is on a mobile device
         const checkIfMobile = () => {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
@@ -19,7 +19,16 @@ function InstructionsPage() {
             }
         };
 
+        const handleResize = () => {
+            setIsLandscape(window.innerWidth > window.innerHeight);
+        };
+
         checkIfMobile();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const handleKeyDown = (rotation) => {
@@ -52,6 +61,14 @@ function InstructionsPage() {
 
     if (!showInstructions && isMobile) {
         return <RotateScreen onComplete={() => setShowInstructions(true)} />;
+    }
+
+    if (isMobile && !isLandscape) {
+        return (
+            <div className="landscape-container">
+                <div className="landscape-message">Vennligst vend telefonen til landskap modus for å komme videre</div>
+            </div>
+        );
     }
 
     return (

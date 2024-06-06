@@ -342,19 +342,22 @@ h1 {
     flex-grow: 1;
 }
 
+
 /* Blinking screen styles */
 .rotate-screen {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     background-color: black;
-    animation: fadeOut 10s forwards;
+    overflow: hidden; /* Prevent overflow */
 }
 
-.rotate-message {
-    color: white;
-    font-size: 2rem;
+.rotate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container */
     animation: blink 1s infinite;
 }
 
@@ -367,11 +370,19 @@ h1 {
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+/* Additional styles for landscape mode */
+.landscape-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+}
+
+.landscape-message {
+    font-size: 2rem;
+    text-align: center;
 }

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Ready for PO">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/RotateScreen.jsx" afterDir="false" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fikset blink screen">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/rotate_your_screen.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RotateScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RotateScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
@@ -98,11 +100,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
@@ -185,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717682486402</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fikset blink screen">
+      <option name="closed" value="true" />
+      <created>1717683263173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717683263173</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +218,7 @@
     <MESSAGE value="Changes by mariu" />
     <MESSAGE value="Put in InsructionPage" />
     <MESSAGE value="Ready for PO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ready for PO" />
+    <MESSAGE value="Fikset blink screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikset blink screen" />
   </component>
 </project>
