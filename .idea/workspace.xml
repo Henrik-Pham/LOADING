@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/BigScreen.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
@@ -23,6 +23,7 @@
         <option value="Class" />
         <option value="HTML File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -97,10 +98,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\static" />
-      <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">

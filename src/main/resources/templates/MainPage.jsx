@@ -120,7 +120,7 @@ function MainPage() {
                 <button onClick={() => handleKeyDown('up')} disabled={isBlurred}>Left</button>
                 <button onClick={() => handleKeyDown('down')} disabled={isBlurred}>Right</button>
             </div>
-            <div className="instructions-box">{getTextForSelectedChoice(selectedChoice)}</div>
+            <div className="main-page-box">{getTextForSelectedChoice(selectedChoice)}</div>
             <div className="circle-button" tabIndex="0" role="button" onClick={handleClick} disabled={isBlurred}>
                 CHOOSE
             </div>
