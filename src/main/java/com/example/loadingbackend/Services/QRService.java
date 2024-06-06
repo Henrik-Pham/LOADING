@@ -25,8 +25,8 @@ public class QRService {
             throw new RuntimeException(e);
         }
 
-        int width = 300;
-        int height = 300;
+        int width = 400;
+        int height = 400;
         BufferedImage qrCode = null;
         try {
             qrCode = QRcodeGenerator.generateQRCode(text, width, height);
