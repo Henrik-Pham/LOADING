@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/BigScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/BigScreen.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage" />
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
     <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="" />
@@ -82,7 +76,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.LoadingBackendApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "hmm",
+    "git-widget-placeholder": "main__Marius",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.nodejs.core.library.configured.version": "18.17.1",
     "javascript.nodejs.core.library.typings.version": "18.17.19",
