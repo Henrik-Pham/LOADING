@@ -37,7 +37,6 @@ function InstructionsPage() {
     return (
         <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="instructions-box">
-                <h1>Instruksjoner</h1>
                 <p>Velkommen til spillet! Her er hvordan du spiller:</p>
                 <ol>
                     <li>Bruk tastene for å rotere valgene.</li>
