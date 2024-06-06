@@ -3,6 +3,7 @@ import './styles.css';
 import backgroundImage from './OpenLandscape.png';
 
 function InstructionsPage() {
+
     const [selectedChoice, setSelectedChoice] = useState(0);
 
     const handleKeyDown = (rotation) => {
