@@ -286,3 +286,18 @@ h1 {
     max-width: 20vw;
     max-height: 20vh;
 }
+
+.choice-display {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.choice-icon {
+    margin-right: 10px;
+    font-size: 2rem; /* Adjust icon size if needed */
+}
+
+.choice-description {
+    flex-grow: 1;
+}
