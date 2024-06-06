@@ -66,7 +66,7 @@ function InstructionsPage() {
     if (isMobile && !isLandscape) {
         return (
             <div className="landscape-container">
-                <div className="landscape-message">Vennligst vend telefonen til landskap modus for å komme videre</div>
+                <div className="landscape-message">Vennligst vend telefonen til landskap-modus/sidelengs for å spille</div>
             </div>
         );
     }
