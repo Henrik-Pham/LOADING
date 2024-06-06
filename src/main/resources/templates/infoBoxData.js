@@ -1,6 +1,6 @@
 import swordImg from './images/Sword_Cave.webp';
 import fuImg from './images/FU_FPV.webp';
-import axeImg from './images/Sharp_axe.png';
+import axeImg from './images/Sharp_axe.webp';
 import toiletPaperImg from './images/TP_Chaos_Woods_Troll.png'
 
 

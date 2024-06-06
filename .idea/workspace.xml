@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ItemInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/FU_FPV.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/Sharp_axe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/Sword_Cave.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/images/TP_Chaos_Woods_Troll.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/infoBoxData.js" afterDir="false" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="added new files: infoBoxData.js and ItemInfo.jsx. Edited MainPage.jsx to take in content from added files. Also added images-folder + images. And tweaked css a bit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/images/Sharp_axe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/infoBoxData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/infoBoxData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
@@ -187,7 +183,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1717509925120</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="added new files: infoBoxData.js and ItemInfo.jsx. Edited MainPage.jsx to take in content from added files. Also added images-folder + images. And tweaked css a bit.">
+      <option name="closed" value="true" />
+      <created>1717674951394</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1717674951394</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +212,7 @@
     <MESSAGE value="updated gitignore and stuff" />
     <MESSAGE value="Changes by mariu" />
     <MESSAGE value="Put in InsructionPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put in InsructionPage" />
+    <MESSAGE value="added new files: infoBoxData.js and ItemInfo.jsx. Edited MainPage.jsx to take in content from added files. Also added images-folder + images. And tweaked css a bit." />
+    <option name="LAST_COMMIT_MESSAGE" value="added new files: infoBoxData.js and ItemInfo.jsx. Edited MainPage.jsx to take in content from added files. Also added images-folder + images. And tweaked css a bit." />
   </component>
 </project>
