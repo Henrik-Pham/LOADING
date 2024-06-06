@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fixed button">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/WebSocket/Node.js" afterDir="false" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fixed the text box">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/DrawQRCode.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/QRController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/QRService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/InstructionsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/BigScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/BigScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/styles.css" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
@@ -106,6 +103,9 @@
       <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates" />
       <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\static" />
     </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates\DrawQrCode.jsx" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
@@ -157,7 +157,7 @@
       <workItem from="1717508710260" duration="2130000" />
       <workItem from="1717578337512" duration="3437000" />
       <workItem from="1717588232400" duration="135000" />
-      <workItem from="1717652554856" duration="4114000" />
+      <workItem from="1717652554856" duration="6890000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />
@@ -180,7 +180,15 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1717509925120</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed the text box">
+      <option name="closed" value="true" />
+      <created>1717661244950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717661244950</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +210,7 @@
     <MESSAGE value="updated gitignore and stuff" />
     <MESSAGE value="Changes by mariu" />
     <MESSAGE value="Put in InsructionPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put in InsructionPage" />
+    <MESSAGE value="Fixed the text box" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the text box" />
   </component>
 </project>

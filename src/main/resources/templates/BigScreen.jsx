@@ -1,9 +1,8 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
-    import { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
+import './styles.css';
+import backgroundImage from '../static/mainPicture.webp';
 
 function BigScreen() {
-
     const host = window.location.hostname;
     const [started, setStarted] = useState(false);
 
@@ -15,42 +14,42 @@ function BigScreen() {
                     'Content-Type': 'application/json',
                 },
             })
-
                 .then(response => response.json())
                 .then(data => {
                     if (data === 'Process started') {
                         setStarted(true);
                         console.log('Process started');
-                    }else if (data === 'Process not started'){
+                    } else if (data === 'Process not started') {
                         console.log('Process not started');
                     }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-
                 });
         }, 1000); // Poll every 1 second
 
         return () => clearInterval(interval); // Clean up on component unmount
-    }, []);
-    
-    const handleStart = () => {
+    }, [host]);
+    function DrawQrCode() {
         if (started) {
-            return (
+            return (<>
                 <div>
-                    <img src={`http://${host}:8080/api/qr`}/>
+                    <img className="qr-code" src={`http://${host}:8080/api/qr`} alt="QR Code"/>
                 </div>
-            );
+            </>
+            )
         }
-    };
+    }
 
     return (
-        <div>
-            {handleStart()}
+        <div className="background-container" style={{backgroundImage: `url(${backgroundImage})`}}>
+            <div className="qr-page">
+                <h1 style={{color: 'black', zIndex: 100}}>Loading...</h1>
+            </div>
+            <DrawQrCode />
+
         </div>
     );
-
 }
 
 export default BigScreen;
-

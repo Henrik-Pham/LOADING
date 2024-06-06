@@ -216,6 +216,27 @@ button {
     font-size: 2vw;
     cursor: pointer;
 }
+h1 {
+    position: absolute;
+    top: 9%;
+    left: 68%;
+    transform: translateX(-50%);
+    font-size: 7em;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(270deg, #ffffff, #cccccc, #999999, #c6e5ac, #cccccc, #ffffff);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 .background-container {
     background-image: url('../static/mainPicture.webp'); /* Use the correct path to your image */
@@ -252,4 +273,16 @@ button {
 
 .instructions-box li {
     margin-bottom: 2vw; /* Adjust this value to change the distance between lines */
+}
+
+.qr-code {
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    border-radius: 10px;
+    border: 2px solid #000; /* Optional: Add border to QR code */
+    width: auto;
+    height: auto;
+    max-width: 20vw;
+    max-height: 20vh;
 }
