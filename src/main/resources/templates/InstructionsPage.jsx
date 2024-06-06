@@ -1,11 +1,26 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import backgroundImage from './OpenLandscape.png';
+import RotateScreen from './RotateScreen';
 
 function InstructionsPage() {
-
+    const [showInstructions, setShowInstructions] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const [selectedChoice, setSelectedChoice] = useState(0);
+
+    useEffect(() => {
+        // Check if the user is on a mobile device
+        const checkIfMobile = () => {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        };
+
+        checkIfMobile();
+    }, []);
 
     const handleKeyDown = (rotation) => {
         if (rotation === 'up') {
@@ -34,6 +49,10 @@ function InstructionsPage() {
     const handleButtonClick = () => {
         alert(`You locked the answer: ${['👆', '🎮', '🎥', '🗺️'][selectedChoice]}`);
     };
+
+    if (!showInstructions && isMobile) {
+        return <RotateScreen onComplete={() => setShowInstructions(true)} />;
+    }
 
     return (
         <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
