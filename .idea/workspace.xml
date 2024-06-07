@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fikset landscape">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RotateScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RotateScreen.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fikset landscape" />
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
     <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="" />
@@ -48,10 +43,10 @@
     &quot;accountId&quot;: &quot;7b2e9cb0-d6b4-44dd-830a-b743f7c74d80&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
