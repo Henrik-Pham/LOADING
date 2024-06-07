@@ -51,6 +51,7 @@ public class QRService {
                         // Site local address is typically what you want in a local network
                         System.out.println(inetAddress);
                         return "http://" + inetAddress.getHostAddress() + ":5173/"+ "instruction";
+
                     }
                 }
             }
