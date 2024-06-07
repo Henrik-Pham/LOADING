@@ -13,7 +13,7 @@ const RotateScreen = ({ onComplete }) => {
 
     return (
         <div className="rotate-screen">
-            <img src={rotateImage} alt="Rotate Your Screen" className="rotate-image" />
+            <img src={rotateImage} alt="Roter skjermen din" className="rotate-image" />
         </div>
     );
 };

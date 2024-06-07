@@ -132,7 +132,7 @@ function MainPage() {
     if (isMobile && !isLandscape) {
         return (
             <div className="landscape-container">
-                <div className="landscape-message">Vennligst vend telefonen til landskap-modus/sidelengs for å spille</div>
+                <div className="landscape-message">Vend mobilen til siden for å spille</div>
             </div>
         );
     }
