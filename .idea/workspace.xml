@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Put in InsructionPage" />
+    <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fikset landscape" />
+
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
     <list id="553dd8f6-890c-4043-8191-aab33f94cd32" name="Changes by Martins Monster" comment="" />
@@ -19,13 +20,16 @@
         <option value="Class" />
         <option value="HTML File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main_Marius" />
+
+        <entry key="$PROJECT_DIR$" value="henrikfromMainmarius" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +45,10 @@
     &quot;url&quot;: &quot;https://github.com/Henrik-Pham/LOADING.git&quot;,
     &quot;accountId&quot;: &quot;7b2e9cb0-d6b4-44dd-830a-b743f7c74d80&quot;
   }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
 }</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -92,11 +100,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\static" />
-      <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
@@ -174,7 +182,31 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1717509925120</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ready for PO">
+      <option name="closed" value="true" />
+      <created>1717682486402</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717682486402</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fikset blink screen">
+      <option name="closed" value="true" />
+      <created>1717683263173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717683263173</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fikset landscape">
+      <option name="closed" value="true" />
+      <created>1717684925145</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717684925145</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +228,9 @@
     <MESSAGE value="updated gitignore and stuff" />
     <MESSAGE value="Changes by mariu" />
     <MESSAGE value="Put in InsructionPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put in InsructionPage" />
+    <MESSAGE value="Ready for PO" />
+    <MESSAGE value="Fikset blink screen" />
+    <MESSAGE value="Fikset landscape" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikset landscape" />
   </component>
 </project>

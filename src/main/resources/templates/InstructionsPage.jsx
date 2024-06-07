@@ -1,10 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import backgroundImage from './OpenLandscape.png';
+import RotateScreen from './RotateScreen';
 
 function InstructionsPage() {
-
+    const [showInstructions, setShowInstructions] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
     const [selectedChoice, setSelectedChoice] = useState(0);
+
+    useEffect(() => {
+        const checkIfMobile = () => {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        };
+
+        const handleResize = () => {
+            setIsLandscape(window.innerWidth > window.innerHeight);
+        };
+
+        checkIfMobile();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleKeyDown = (rotation) => {
         if (rotation === 'up') {
@@ -33,6 +58,18 @@ function InstructionsPage() {
     const handleButtonClick = () => {
         alert(`You locked the answer: ${['👆', '🎮', '🎥', '🗺️'][selectedChoice]}`);
     };
+
+    if (!showInstructions && isMobile) {
+        return <RotateScreen onComplete={() => setShowInstructions(true)} />;
+    }
+
+    if (isMobile && !isLandscape) {
+        return (
+            <div className="landscape-container">
+                <div className="landscape-message">Vennligst vend telefonen til landskap-modus/sidelengs for å spille</div>
+            </div>
+        );
+    }
 
     return (
         <div className="background-container" style={{ backgroundImage: `url(${backgroundImage})` }}>

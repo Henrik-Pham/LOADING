@@ -25,8 +25,8 @@ public class QRService {
             throw new RuntimeException(e);
         }
 
-        int width = 300;
-        int height = 300;
+        int width = 400;
+        int height = 400;
         BufferedImage qrCode = null;
         try {
             qrCode = QRcodeGenerator.generateQRCode(text, width, height);
@@ -50,7 +50,8 @@ public class QRService {
                     if (!inetAddress.isLoopbackAddress() && inetAddress.isSiteLocalAddress()) {
                         // Site local address is typically what you want in a local network
                         System.out.println(inetAddress);
-                        return "http://" + inetAddress.getHostAddress() + ":5173/instruction";
+                        return "http://" + inetAddress.getHostAddress() + ":5173/"+ "instruction";
+
                     }
                 }
             }
