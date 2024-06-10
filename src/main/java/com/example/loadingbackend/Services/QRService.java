@@ -41,21 +41,33 @@ public class QRService {
     }
 
     public String getIpAddress() throws IOException {
-        Enumeration<NetworkInterface> nets = NetworkInterface.getNetworkInterfaces();
-        for (NetworkInterface netint : Collections.list(nets)) {
-            if (!netint.isLoopback() && netint.isUp() && !netint.isVirtual()) {
-                Enumeration<InetAddress> inetAddresses = netint.getInetAddresses();
-                while (inetAddresses.hasMoreElements()) {
-                    InetAddress inetAddress = inetAddresses.nextElement();
-                    if (!inetAddress.isLoopbackAddress() && inetAddress.isSiteLocalAddress()) {
-                        // Site local address is typically what you want in a local network
-                        System.out.println(inetAddress);
-                        return "http://" + inetAddress.getHostAddress() + ":5173/"+ "instruction";
 
+        String operatingSystem = System.getProperty("os.name").toLowerCase();
+        if (operatingSystem.contains("win")) {
+            InetAddress ip = InetAddress.getLocalHost();
+            String ipAddress = ip.getHostAddress();
+            ipAddress = "http://" + ipAddress + ":5173/"+ "instruction";
+            return ipAddress;
+        } else if (operatingSystem.contains("mac")) {
+            Enumeration<NetworkInterface> nets = NetworkInterface.getNetworkInterfaces();
+            for (NetworkInterface netint : Collections.list(nets)) {
+                if (!netint.isLoopback() && netint.isUp() && !netint.isVirtual()) {
+                    Enumeration<InetAddress> inetAddresses = netint.getInetAddresses();
+                    while (inetAddresses.hasMoreElements()) {
+                        InetAddress inetAddress = inetAddresses.nextElement();
+                        if (!inetAddress.isLoopbackAddress() && inetAddress.isSiteLocalAddress()) {
+                            // Site local address is typically what you want in a local network
+                            System.out.println(inetAddress);
+                            return "http://" + inetAddress.getHostAddress() + ":5173/"+ "instruction";
+
+                        }
                     }
                 }
             }
+
         }
+
+
         throw new IOException("No suitable network interface found");
     }
 
