@@ -22,7 +22,7 @@ public class EventModel {
     private String eventName;
     private String eventDescription;
 
-    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany
     private List<ChoiceModel> choices;
 
 }

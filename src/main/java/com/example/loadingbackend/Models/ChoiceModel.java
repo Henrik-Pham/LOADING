@@ -1,5 +1,7 @@
 package com.example.loadingbackend.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,11 +27,28 @@ public class ChoiceModel {
     //A choice can have many votes, but a vote can only be for one choice
     //FetchType.LAZY means that the votes are only loaded when they are accessed
     //The relationship is mapped by the choice field in the vote model, meaning that the choice is the owner of the relationship
-    @OneToMany(mappedBy = "choice", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "choice", fetch = FetchType.EAGER, cascade =
+            CascadeType.ALL)
+    @JsonIgnoreProperties("choice")
     private List<VoteModel> votes;
 
-    @ManyToOne
-    private EventModel event;
+    private int votesCount;
+    @PrePersist
+    @PreUpdate
+    public void updateVotesCount() {
+        if (votes != null) {
+            votesCount = votes.size();
+        } else {
+            votesCount = 0;
+        }
+    }
+
+
+
+
+    @OneToOne
+    @JoinColumn(name = "next_event_id")
+    private EventModel nextEvent;
 
 
 }
