@@ -1,5 +1,6 @@
 package com.example.loadingbackend.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class VoteModel {
     private int ID;
 
     @ManyToOne
+    @JsonIgnoreProperties("votes")
     private ChoiceModel choice;
 
     public VoteModel(int ID, ChoiceModel choice) {

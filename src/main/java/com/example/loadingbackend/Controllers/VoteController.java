@@ -27,9 +27,10 @@ public class VoteController {
     @CrossOrigin
     //Post mapping which adds a vote to the vote service
     //Note that the return value of the function is what the server will return to the client
-    @PostMapping
-    public ResponseEntity<String> addVote(@RequestBody VoteModel voteModel){
-        voteService.addVote(voteModel);
+    @PostMapping("/{choiceId}")
+    public ResponseEntity<String> addVote(@RequestBody VoteModel voteModel,
+                                          @PathVariable int choiceId){
+        voteService.addVote(voteModel, choiceId);
 
         return ResponseEntity.ok(gson.toJson("Vote added"));
     }
