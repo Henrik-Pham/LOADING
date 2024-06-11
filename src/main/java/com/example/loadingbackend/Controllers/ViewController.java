@@ -52,4 +52,9 @@ public class ViewController {
             return ResponseEntity.ok(gson.toJson("Process not started"));
         }
     }
+
+    @GetMapping("/author")
+    public String getAuthor() {
+        return "author";
+    }
 }

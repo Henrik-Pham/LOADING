@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fikset landscape">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ChoiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/EventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Repos/ChoiceRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Repos/EventRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/ChoiceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/EventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/PlayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/PlayModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Repos/PlayRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/PlayService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/author.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/VoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/VoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/ChoiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/ChoiceModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/VoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/VoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Repos/VoteRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Repos/VoteRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/VoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/VoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" afterDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
@@ -31,11 +25,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JSX File" />
         <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -173,7 +167,8 @@
       <workItem from="1717592384652" duration="1165000" />
       <workItem from="1717673498065" duration="3000" />
       <workItem from="1717673506425" duration="875000" />
-      <workItem from="1718028117318" duration="18942000" />
+      <workItem from="1718028117318" duration="21863000" />
+      <workItem from="1718088899399" duration="5300000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />

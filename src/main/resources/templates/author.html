@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forfatter</title>
+</head>
+<body>
+
+    <div id="root">
+        <div id="write">
+            <h1>Skriv/rediger et stykke</h1>
+            <form id="writeForm">
+                <input type="text" id="fileName"
+                       placeholder="Enter name of existing file to edit or a new name to create a new file">
+                <br> <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="read"></div>
+    </div>
+</body>
+<script>
+
+    const writeForm = document.getElementById('writeForm');
+    const fileName = document.getElementById('fileName');
+    const read = document.getElementById('read');
+
+    writeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = fileName.value;
+        fetch(`http://localhost:8080/api/play/${name}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('get action successful:', data);
+                read.innerHTML = data;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    });
+</script>
+</html>
