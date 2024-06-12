@@ -59,6 +59,9 @@ public class EventController {
     }
 
 
-
+    @GetMapping("mostVotes/{eventId}")
+    public ChoiceModel getChoiceWithMostVotes(@PathVariable int eventId) {
+        return eventService.getChoiceWithMostVotes(eventId);
+    }
 
 }

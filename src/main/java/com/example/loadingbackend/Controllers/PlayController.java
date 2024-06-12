@@ -8,11 +8,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("api/play")
-@CrossOrigin(origins = "*")
+
 public class PlayController {
 
     private final PlayService playService;
@@ -34,15 +39,18 @@ public class PlayController {
         return playService.updatePlay(play);
     }
 
+
     @GetMapping("/{fileName}")
-    public PlayModel findExistingOrAddNew(@PathVariable String fileName) {
+    public ResponseEntity<?> findExistingOrAddNew(@PathVariable String fileName) {
+
+
         PlayModel play = playEventChoiceService.getPlayById(fileName);
         if (play == null) {
             play = new PlayModel();
             play.setFileName(fileName);
             playService.addPlay(play);
         }
-        return play;
+        return ResponseEntity.ok(play);
     }
 
     @PutMapping("/{fileName}/{eventId}")

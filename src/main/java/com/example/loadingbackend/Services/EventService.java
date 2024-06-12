@@ -68,4 +68,14 @@ public class EventService {
             e.printStackTrace();
         }
     }
+
+    public ChoiceModel getChoiceWithMostVotes(int eventId) {
+        EventModel event = getEventById(eventId);
+        if (event != null) {
+            return event.getChoices().stream().max(
+                    java.util.Comparator.comparingInt(choice -> choice.getVotes().size())
+            ).orElse(null);
+        }
+        return null;
+    }
 }
