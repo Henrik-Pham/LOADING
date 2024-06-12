@@ -4,6 +4,8 @@ import com.example.loadingbackend.Models.PlayModel;
 import com.example.loadingbackend.Services.PlayEventChoiceService;
 import com.example.loadingbackend.Services.PlayService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
@@ -47,6 +49,12 @@ public class PlayController {
     public PlayModel addEventToPlay(@PathVariable String fileName,
                                      @PathVariable int eventId) {
         return playEventChoiceService.addEventToPlay(fileName, eventId);
+    }
+
+    @PostMapping("/save/{fileName}")
+    public ResponseEntity<String> savePlayAsJson(@PathVariable String fileName) {
+        String result = playService.savePlayAsJson(fileName);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 

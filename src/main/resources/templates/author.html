@@ -10,7 +10,8 @@
     <div id="write">
         <h1>Skriv/rediger et stykke</h1>
         <form id="writeForm">
-            <input type="text" id="fileName" placeholder="Enter name of existing file to edit or a new name to create a new file">
+            <p>Enter name of existing file to edit or a new name to create a new file</p>
+            <input type="text" id="fileName" placeholder="Play name">
             <br> <br>
             <button type="submit">Submit</button>
         </form>
@@ -29,6 +30,18 @@
     const eventContainer = document.createElement('div');
     eventContainer.id = 'eventContainer';
     playElement.appendChild(eventContainer);
+
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'Save Play';
+    saveButton.addEventListener('click', () => {
+        fetch(`http://localhost:8080/api/play/save/${currentFileName}`, {
+            method: 'POST',
+        })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch((error) => console.error('Error:', error));
+    });
+    writeForm.appendChild(saveButton);
 
     function handleFormSubmit(e) {
         e.preventDefault();
@@ -203,6 +216,10 @@
         eventDiv.appendChild(eventDescriptionField);
         eventDiv.appendChild(updateEventButton);
 
+        if (event.choices.length < 4) {
+            createAdditionalChoices(event, eventDiv);
+        }
+
         listChoices(event, eventDiv);
 
         eventContainer.appendChild(eventDiv);
@@ -237,7 +254,7 @@
         });
     }
 
-    function addChoice(choice, event) {
+    function createChoice(choice, event) {
         fetch('http://localhost:8080/api/choice', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -245,8 +262,15 @@
         })
             .then(response => response.json())
             .then(data => {
+                // Add the new choice to the event
                 event.choices.push(data);
-                addChoiceToEvent(data, event);
+
+                // Update the event on the server
+                return updateEvent(event);
+            })
+            .then(() => {
+                // Fetch the updated play data from the server
+                fetchPlayData();
             });
     }
 
@@ -330,6 +354,41 @@
             });
     }
 
+    function createAdditionalChoices(event, eventDiv) {
+        // Create a p tag that says there should be 4 choices, but there are currently less
+        const choicesMessageP = document.createElement('p');
+        choicesMessageP.textContent = `There should be 4 choices, but there are currently ${event.choices.length}.`;
+        eventDiv.appendChild(choicesMessageP);
+
+        // Create text field for new choice
+        const newChoiceField = document.createElement('input');
+        newChoiceField.type = 'text';
+        newChoiceField.id = `newChoice`;
+        newChoiceField.placeholder = 'Enter new choice';
+        eventDiv.appendChild(newChoiceField);
+
+        // Create a button for creating more choices
+        const createChoiceButton = document.createElement('button');
+        createChoiceButton.textContent = 'Create Choice';
+        createChoiceButton.addEventListener('click', () => {
+            if (newChoiceField && newChoiceField.value) {
+                // Create a new choice
+                const newChoice = {
+                    choiceDescription: newChoiceField.value,
+                    nextEvent: null
+                };
+
+                // Use the createChoice function to add the new choice to the event
+                createChoice(newChoice, event)
+                    .then(() => {
+                        // Fetch the updated play data from the server
+                        fetchPlayData();
+                    });
+            }
+        });
+        eventDiv.appendChild(createChoiceButton);
+    }
+
     function listChoices(event, eventDiv) {
         // Create a div for the choices
         const choicesContainer = document.createElement('div');
@@ -344,9 +403,9 @@
             choiceDescriptionP.textContent = `Choice description: ${choice.choiceDescription}`;
             choiceDiv.appendChild(choiceDescriptionP);
 
-            // Create p tag for next event
+
             const nextEventP = document.createElement('p');
-            nextEventP.textContent = `Next event: ${choice.nextEvent}`;
+            nextEventP.textContent = `Id of the next event: ${choice.nextEvent}`;
             choiceDiv.appendChild(nextEventP);
 
             // Create update button

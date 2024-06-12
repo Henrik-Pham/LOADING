@@ -48,13 +48,19 @@ public class PlayService {
     }
 
 
-    public void savePlayAsJson(PlayModel play) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            objectMapper.writeValue(new File(play.getFileName()), play);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public String savePlayAsJson(String fileName) {
+        PlayModel play = playRepo.findById(fileName).orElse(null);
+        if (play != null) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            try {
+                objectMapper.writeValue(new File("plays/" + fileName + ".json"), play);
+                return "Play saved successfully as JSON.";
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Error saving play as JSON.";
+            }
         }
+        return "Play not found.";
     }
 
 

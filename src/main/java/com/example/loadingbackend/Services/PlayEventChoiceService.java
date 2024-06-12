@@ -58,7 +58,7 @@ public class PlayEventChoiceService {
 
         if (play == null) {
             // Construct the file path
-            String filePath = id + ".json";
+            String filePath = "plays/" + id + ".json";
 
             // Check if the file exists
             if (Files.exists(Paths.get(filePath))) {
@@ -82,7 +82,6 @@ public class PlayEventChoiceService {
         }
 
         return play;
-
     }
 
     public PlayModel addEventToPlay(String fileName, int eventId) {
