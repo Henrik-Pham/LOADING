@@ -51,13 +51,13 @@ function MainPage() {
     }, []);
 
     useEffect(() => {
-        // Connect to WebSocket server for real-time updates
+
         const socket = new WebSocket(`ws://${host}:8080`);
 
         socket.onmessage = (event) => {
             const message = JSON.parse(event.data);
             if (message.action === 'next') {
-                window.location.reload(); // Reload the page on 'next' action
+                window.location.reload();
             }
         };
 
@@ -75,7 +75,7 @@ function MainPage() {
         if (!isBlurred) {
             interval = setInterval(() => {
                 setTimerWidth((prevWidth) => {
-                    const newWidth = prevWidth - 100 / 30; // decrease width over 30 seconds
+                    const newWidth = prevWidth - 100 / 30;
                     if (newWidth <= 0) {
                         setIsBlurred(true);
                         clearInterval(interval);
@@ -102,7 +102,7 @@ function MainPage() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ id: Math.random() }), // Use a random ID for demonstration
+            body: JSON.stringify({ id: Math.random() }),
         })
             .then((response) => response.json())
             .then((data) => {
