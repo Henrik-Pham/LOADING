@@ -1,6 +1,7 @@
 package com.example.loadingbackend.Controllers;
 
 import com.example.loadingbackend.Models.PlayModel;
+import com.example.loadingbackend.Services.PlayEventChoiceService;
 import com.example.loadingbackend.Services.PlayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +14,12 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 public class PlayController {
 
     private final PlayService playService;
+    private final PlayEventChoiceService playEventChoiceService;
 
     @Autowired
-    public PlayController(PlayService playService) {
+    public PlayController(PlayService playService, PlayEventChoiceService playEventChoiceService) {
         this.playService = playService;
+        this.playEventChoiceService = playEventChoiceService;
     }
 
     @DeleteMapping("/{id}")
@@ -31,7 +34,7 @@ public class PlayController {
 
     @GetMapping("/{fileName}")
     public PlayModel findExistingOrAddNew(@PathVariable String fileName) {
-        PlayModel play = playService.getPlayById(fileName);
+        PlayModel play = playEventChoiceService.getPlayById(fileName);
         if (play == null) {
             play = new PlayModel();
             play.setFileName(fileName);
@@ -41,9 +44,9 @@ public class PlayController {
     }
 
     @PutMapping("/{fileName}/{eventId}")
-    public PlayModel addChoiceToPlay(@PathVariable String fileName,
+    public PlayModel addEventToPlay(@PathVariable String fileName,
                                      @PathVariable int eventId) {
-        return playService.addEventToPlay(fileName, eventId);
+        return playEventChoiceService.addEventToPlay(fileName, eventId);
     }
 
 

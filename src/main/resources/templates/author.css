@@ -18,3 +18,13 @@ body{
     border-top: white 3px solid;
 
 }
+.event {
+    position: relative; /* This is needed for absolute positioning of the delete button */
+}
+
+.delete-button {
+    position: absolute;
+    right: 0;
+    background-color: red;
+    color: white;
+}

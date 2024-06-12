@@ -18,13 +18,20 @@ public class PlayService {
 
     private final PlayRepo playRepo;
     private final EventService eventService;
-    private final ChoiceService choiceService;
+
+    private final PlayEventChoiceService playEventChoiceService;
 
     @Autowired
-    public PlayService(PlayRepo playRepo, EventService eventService, ChoiceService choiceService) {
+    public PlayService(PlayRepo playRepo, PlayEventChoiceService playEventChoiceService,
+                       EventService eventService) {
         this.playRepo = playRepo;
+        this.playEventChoiceService = playEventChoiceService;
         this.eventService = eventService;
-        this.choiceService = choiceService;
+    }
+
+    public PlayModel getPlayById(String id) {
+        PlayModel play = playRepo.findById(id).orElse(null);
+        return play;
     }
 
     public void deletePlayById(String id) {
@@ -40,37 +47,6 @@ public class PlayService {
         return playRepo.save(play);
     }
 
-    public PlayModel getPlayById(String id) {
-        PlayModel play = playRepo.findById(id).orElse(null);
-
-        if (play == null) {
-            // Construct the file path
-            String filePath = id + ".json";
-
-            // Check if the file exists
-            if (Files.exists(Paths.get(filePath))) {
-                // If the file exists, read it into a PlayModel object
-                ObjectMapper objectMapper = new ObjectMapper();
-                try {
-                    play = objectMapper.readValue(new File(filePath), PlayModel.class);
-                    for (EventModel event : play.getEvents()) {
-                        for (ChoiceModel choice : event.getChoices()) {
-                            choiceService.addChoice(choice);
-                        }
-                        eventService.addEvent(event);
-                    }
-                    playRepo.save(play);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }else {
-                return null;
-            }
-        }
-
-        return play;
-
-    }
 
     public void savePlayAsJson(PlayModel play) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -81,13 +57,5 @@ public class PlayService {
         }
     }
 
-    public PlayModel addEventToPlay(String fileName, int eventId) {
-        PlayModel play = getPlayById(fileName);
-        if (play != null) {
-            play.getEvents().add(eventService.getEventById(eventId));
-            playRepo.save(play);
-        }
-        return play;
-    }
 
 }

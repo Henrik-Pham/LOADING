@@ -1,9 +1,6 @@
 package com.example.loadingbackend.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +17,7 @@ public class PlayModel {
     @Id
     private String fileName;
 
-    @OneToMany
+    @OneToMany( cascade = CascadeType.ALL)
     private List<EventModel> events;
 
 }
