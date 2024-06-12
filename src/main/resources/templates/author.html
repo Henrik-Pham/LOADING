@@ -3,46 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <title>Forfatter</title>
+    <link rel="stylesheet" href="author.css">
 </head>
 <body>
-
-    <div id="root">
-        <div id="write">
-            <h1>Skriv/rediger et stykke</h1>
-            <form id="writeForm">
-                <input type="text" id="fileName"
-                       placeholder="Enter name of existing file to edit or a new name to create a new file">
-                <br> <br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <div id="read"></div>
+<div id="root">
+    <div id="write">
+        <h1>Skriv/rediger et stykke</h1>
+        <form id="writeForm">
+            <input type="text" id="fileName" placeholder="Enter name of existing file to edit or a new name to create a new file">
+            <br> <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="play"></div>
     </div>
-</body>
+    <div id="read"></div>
+</div>
 <script>
-
     const writeForm = document.getElementById('writeForm');
     const fileName = document.getElementById('fileName');
     const read = document.getElementById('read');
+    const playElement = document.getElementById('play');
+    const play = { fileName: '', events: [] }
 
-    writeForm.addEventListener('submit', (e) => {
+    function handleFormSubmit(e) {
         e.preventDefault();
-        const name = fileName.value;
+        fetchPlayData(fileName.value);
+    }
+
+    if (writeForm) {
+        writeForm.addEventListener('submit', handleFormSubmit);
+    } else {
+        console.error("No element with id 'writeForm' found");
+    };
+
+    function fetchPlayData(name) {
         fetch(`http://localhost:8080/api/play/${name}`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(response => response.json())
+            .then(data => mapDataToPlayObject(data))
+            .catch((error) => console.error('Error:', error));
+    }
+
+    function mapDataToPlayObject(data) {
+        play.fileName = data.fileName;
+        if(data.events != null){
+            play.events = data.events.map(event => ({
+                id: event.id,
+                playEventName: event.playEventName,
+                eventDescription: event.eventDescription,
+                choices: event.choices ? event.choices.map(choice => ({
+                    id: choice.id,
+                    choiceDescription: choice.choiceDescription,
+                    nextEvent: choice.nextEvent
+                })) : []
+            }));
+        }
+
+        playElement.innerHTML = '';
+        play.events.forEach(event => createEventDiv(event));
+        playElement.appendChild(createNewEventSection());
+    }
+
+    function createEventDiv(event) {
+
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'event';
+        eventDiv.innerHTML = `<h2 class="event-name">Event name: ${event.playEventName}</h2>`;
+        eventDiv.innerHTML += `<h3 class="event-id">Event id: ${event.id}</h3>`;
+        eventDiv.innerHTML += `<h3 class="event-description">Event description: ${event.eventDescription}</h3>`;
+
+            console.log(event);
+        eventDiv.appendChild(createEventTextFieldAndButton('New event name', 'Update event name', (textField, event) => {
+            console.log(event);
+            event.playEventName = textField.value;
+            updateEvent(event);
+        }, event));
+
+        // Create a new form and give it a unique ID
+        const eventForm = document.createElement('form');
+        eventForm.id = "form-event"; // This gives the form a unique ID based on the event ID
+        eventDiv.appendChild(eventForm);
+
+        // Create an input field for the event description
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'New event description';
+        eventForm.appendChild(input);
+
+        // Create a submit button
+        const button = document.createElement('button');
+        button.type = 'submit';
+        button.textContent = 'Update event description';
+        eventForm.appendChild(button);
+
+        // Add a submit event listener to the form
+        // Add a submit event listener to the form using its unique ID
+        button.addEventListener('submit', (e) => {
+            e.preventDefault();
+            e.eventDescription = input.value;
+            updateEvent(event);
+        });
+
+
+
+        /*
+        eventDiv.appendChild(createEventTextFieldAndButton('New event description', 'Update event description',
+            (textField, event) => {
+            event.eventDescription = textField.value;
+            updateEvent(event);
+        }, event));
+*/
+
+        event.choices.forEach(choice => {
+            const choiceDiv = document.createElement('div');
+            choiceDiv.className = 'choice';
+            choiceDiv.innerHTML = `<p class="choice-description">choice description: ${choice.choiceDescription}</p>`;
+            choiceDiv.appendChild(createTextFieldAndButton('New choice description', 'Update choice description', (textField) => {
+                choice.choiceDescription = textField.value;
+                updateChoice(choice);
+            }));
+            eventDiv.appendChild(choiceDiv);
+        });
+
+        if (event.choices.length < 4) {
+            eventDiv.innerHTML += `<h3 >You have less than 4 choices in this event, add some more. <br></h3>`;
+            eventDiv.appendChild(createTextFieldAndButton('New choice description', 'Add choice', (newDescription) => {
+                const newChoice = { choiceDescription: newDescription.value, nextEvent: null };
+                addChoice(newChoice, event);
+            }));
+        }
+
+        playElement.appendChild(eventDiv);
+
+    }
+
+    function createEventTextFieldAndButton(placeholder, buttonText, onClick, event) {
+        const textField = document.createElement('input');
+        textField.type = 'text';
+        textField.placeholder = placeholder;
+        const button = document.createElement('button');
+        button.textContent = buttonText;
+        button.addEventListener('click', () => {
+            console.log('Button clicked. Event:', event);
+            onClick(textField, event);
+        });
+        const div = document.createElement('div');
+        div.appendChild(textField);
+        div.appendChild(button);
+        return div;
+    }
+
+    function createTextFieldAndButton(placeholder, buttonText, onClick) {
+        const textField = document.createElement('input');
+        textField.type = 'text';
+        textField.placeholder = placeholder;
+        const button = document.createElement('button');
+        button.textContent = buttonText;
+        button.addEventListener('click', () => onClick(textField));
+        const div = document.createElement('div');
+        div.appendChild(textField);
+        div.appendChild(button);
+        return div;
+    }
+
+    function createNewEventSection() {
+        const newEventSection = document.createElement('div');
+        newEventSection.innerHTML = '<h2>Create a new event</h2>';
+        newEventSection.appendChild(createTextFieldAndButton('New event name', 'Create event', (newName) => {
+            const newEvent = { playEventName: newName.value, eventDescription: '', choices: [] };
+            createEvent(newEvent);
+        }));
+        return newEventSection;
+    }
+
+    function createEvent(event) {
+        fetch('http://localhost:8080/api/event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(event),
         })
             .then(response => response.json())
             .then(data => {
-                console.log('get action successful:', data);
-                read.innerHTML = data;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
+                play.events.push(data);
+                updatePlay(play);
+                createEventDiv(data);
             });
+    }
 
-    });
+    function updateEvent(event) {
+        console.log("got here");
+        return fetch('http://localhost:8080/api/event', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(event),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => console.log('Event updated successfully: ', data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function addChoice(choice, event) {
+        console.log("got here");
+        fetch('http://localhost:8080/api/choice', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(choice),
+        })
+            .then(response => response.json())
+            .then(data => {
+                event.choices.push(data);
+                addChoiceToEvent(data, event);
+            });
+    }
+
+    function addChoiceToEvent(choice, event) {
+        fetch(`http://localhost:8080/api/event/${event.id}/${choice.id}`, { method: 'PUT' });
+    }
+
+    function updatePlay(play){
+        fetch(`http://localhost:8080/api/play/update/${play.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(play),
+        });
+    }
+
+    function updateChoice(choice){
+        console.log("got here");
+        fetch('http://localhost:8080/api/choice', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(choice),
+        });
+    }
 </script>
+</body>
 </html>

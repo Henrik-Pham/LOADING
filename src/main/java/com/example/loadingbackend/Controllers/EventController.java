@@ -35,8 +35,8 @@ public class EventController {
     }
 
     @PutMapping
-    public void updateEvent(@RequestBody EventModel event) {
-        eventService.updateEvent(event);
+    public EventModel updateEvent(@RequestBody EventModel event) {
+        return eventService.updateEvent(event);
     }
 
     @GetMapping("/votes/{eventId}")

@@ -19,7 +19,7 @@ public class EventModel {
     @Column(name = "event_id", nullable = false, unique = true)
     private int ID;
 
-    private String eventName;
+    private String playEventName;
     private String eventDescription;
 
     @OneToMany

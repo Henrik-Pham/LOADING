@@ -28,8 +28,8 @@ public class EventService {
         eventRepo.deleteById(id);
     }
 
-    public void updateEvent(EventModel event) {
-        eventRepo.save(event);
+    public EventModel updateEvent(EventModel event) {
+        return eventRepo.save(event);
     }
 
     public EventModel getEventById(int id) {

@@ -40,5 +40,11 @@ public class PlayController {
         return play;
     }
 
+    @PutMapping("/{fileName}/{eventId}")
+    public PlayModel addChoiceToPlay(@PathVariable String fileName,
+                                     @PathVariable int eventId) {
+        return playService.addEventToPlay(fileName, eventId);
+    }
+
 
 }

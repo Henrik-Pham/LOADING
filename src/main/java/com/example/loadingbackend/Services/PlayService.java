@@ -71,4 +71,14 @@ public class PlayService {
             e.printStackTrace();
         }
     }
+
+    public PlayModel addEventToPlay(String fileName, int eventId) {
+        PlayModel play = getPlayById(fileName);
+        if (play != null) {
+            play.getEvents().add(eventService.getEventById(eventId));
+            playRepo.save(play);
+        }
+        return play;
+    }
+
 }

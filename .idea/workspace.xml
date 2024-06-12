@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e02edac-9ad2-4204-a7c0-57c70fc99068" name="Changes" comment="Fikset landscape">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/PlayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/PlayModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Repos/PlayRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/PlayService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/author.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event.json" beforeDir="false" afterPath="$PROJECT_DIR$/event.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/PlayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Controllers/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Models/EventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/PlayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loadingbackend/Services/PlayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/author.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/author.html" beforeDir="false" />
     </list>
     <list id="4c0d2f36-4a48-4f76-b971-ca81630f41be" name="Changes by henrikpham" comment="" />
     <list id="4bb755f4-f86e-4459-a026-43f51f1d7fd0" name="Changes by mariu" comment="Changes by mariu" />
@@ -82,6 +84,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.author.html.executor&quot;: &quot;Debug&quot;,
     &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -96,6 +99,7 @@
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.1&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.19&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Martins Monster/Desktop/LOADING/src/main/resources/templates&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -106,16 +110,19 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Martins Monster\Desktop\LOADING\src\main\resources\templates" />
       <recent name="C:\Users\mariu\Documents\BackEndWork\src\main\resources\templates\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/images" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.LoadingBackendApplication">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BackEndWork/index.html" useBuiltInWebServerPort="true">
+    <configuration name="author.html" type="JavascriptDebugType" temporary="true" uri="http://localhost:8080/author">
       <method v="2" />
     </configuration>
     <configuration name="LoadingBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -135,12 +142,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.author.html" />
+      <item itemvalue="npm.dev" />
+      <item itemvalue="Spring Boot.LoadingBackendApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.author.html" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.author.html" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -168,7 +180,10 @@
       <workItem from="1717673498065" duration="3000" />
       <workItem from="1717673506425" duration="875000" />
       <workItem from="1718028117318" duration="21863000" />
-      <workItem from="1718088899399" duration="5300000" />
+      <workItem from="1718088899399" duration="28471000" />
+      <workItem from="1718120757825" duration="7857000" />
+      <workItem from="1718129309892" duration="10511000" />
+      <workItem from="1718140143371" duration="4203000" />
     </task>
     <task id="LOCAL−00001" summary="updated gitignore">
       <option name="closed" value="true" />
@@ -241,5 +256,16 @@
     <MESSAGE value="Fikset blink screen" />
     <MESSAGE value="Fikset landscape" />
     <option name="LAST_COMMIT_MESSAGE" value="Fikset landscape" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/templates/author.html</url>
+          <line>68</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

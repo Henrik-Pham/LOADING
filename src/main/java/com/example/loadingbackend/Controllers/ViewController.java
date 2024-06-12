@@ -57,4 +57,9 @@ public class ViewController {
     public String getAuthor() {
         return "author";
     }
+
+    @GetMapping("/author.css")
+    public String getAuthorCss() {
+        return "author.css";
+    }
 }
