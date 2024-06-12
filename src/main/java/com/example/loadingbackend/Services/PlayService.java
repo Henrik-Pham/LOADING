@@ -1,5 +1,7 @@
 package com.example.loadingbackend.Services;
 
+import com.example.loadingbackend.Models.ChoiceModel;
+import com.example.loadingbackend.Models.EventModel;
 import com.example.loadingbackend.Models.PlayModel;
 import com.example.loadingbackend.Repos.PlayRepo;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -51,6 +53,13 @@ public class PlayService {
                 ObjectMapper objectMapper = new ObjectMapper();
                 try {
                     play = objectMapper.readValue(new File(filePath), PlayModel.class);
+                    for (EventModel event : play.getEvents()) {
+                        for (ChoiceModel choice : event.getChoices()) {
+                            choiceService.addChoice(choice);
+                        }
+                        eventService.addEvent(event);
+                    }
+                    playRepo.save(play);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
