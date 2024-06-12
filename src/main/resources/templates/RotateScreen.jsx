@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './styles.css';
-import rotateImage from './images/rotate_your_screen.png'; // Adjust the path as necessary
+import rotateImage from './images/rotate_your_screen.png';
 
 const RotateScreen = ({ onComplete }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onComplete();
-        }, 4000); // 4 seconds to allow for blinking three times
+        }, 4000);
 
         return () => clearTimeout(timer);
     }, [onComplete]);
