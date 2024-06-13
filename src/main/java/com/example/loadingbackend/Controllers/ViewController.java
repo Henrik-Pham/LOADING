@@ -40,12 +40,8 @@ public class ViewController {
 
     @CrossOrigin
     @PostMapping("/start")
-    public ResponseEntity<String> startProcess(HttpServletRequest request) {
-        String clientIP = request.getRemoteAddr();
-        if (!clientIP.equals("127.0.0.1") && !clientIP.equals("0:0:0:0:0:0:0:1")) {
-            return ResponseEntity.status(
-                    HttpStatus.FORBIDDEN).body("Access denied");
-        }
+    public ResponseEntity<String> startProcess() {
+
         isStarted = true;
         return ResponseEntity.ok(gson.toJson("Process started"));
     }
