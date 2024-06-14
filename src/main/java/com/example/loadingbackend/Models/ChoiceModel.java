@@ -46,8 +46,9 @@ public class ChoiceModel {
 
 
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "next_event_id")
+    @JsonIgnoreProperties("choices")
     private EventModel nextEvent;
 
 

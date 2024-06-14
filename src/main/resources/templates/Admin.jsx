@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Admin() {
     const navigate = useNavigate();
     const host = window.location.hostname;
+    const play = {};
 
     const handleGenerateQR = () => {
         fetch(`http://${host}:8080/start`, {
@@ -75,12 +76,46 @@ function Admin() {
             });
     };
 
+    function handleSelectPlay() {
+        const filename = document.getElementById('filename').value;
+        fetch(`http://localhost:8080/api/play/${filename}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                play.fileName = data.fileName;
+                if(data.events != null){
+                    play.events = data.events.map(event => ({
+                        id: event.id,
+                        playEventName: event.playEventName,
+                        eventDescription: event.eventDescription,
+                        choices: event.choices ? event.choices.map(choice => ({
+                            id: choice.id,
+                            choiceDescription: choice.choiceDescription,
+                            nextEvent: choice.nextEvent
+                        })) : []
+                    }));
+                }
+            })
+            .then(() => {
+                console.log('Play action successful:', play);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+
     return (
         <div className="admin-container">
+            <input type="text" id="filename" placeholder="Play file name"/><button onClick={handleSelectPlay}>Select play</button>
             <button onClick={handleGenerateQR}>Generate and display QRcode</button>
             <button onClick={handleStart}>Start</button>
             <button onClick={handleNext}>Next</button>
             <button onClick={handleStop}>Stop</button>
+
         </div>
     );
 }

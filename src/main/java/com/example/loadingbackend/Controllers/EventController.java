@@ -3,6 +3,7 @@ package com.example.loadingbackend.Controllers;
 import com.example.loadingbackend.Models.ChoiceModel;
 import com.example.loadingbackend.Models.EventModel;
 import com.example.loadingbackend.Services.EventService;
+import com.example.loadingbackend.Services.PlayEventChoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +13,13 @@ import org.springframework.web.bind.annotation.*;
 public class EventController {
 
     private final EventService eventService;
+    private final PlayEventChoiceService playEventChoiceService;
 
 
     @Autowired
-    public EventController(EventService eventService){
+    public EventController(EventService eventService, PlayEventChoiceService playEventChoiceService) {
         this.eventService = eventService;
+        this.playEventChoiceService = playEventChoiceService;
     }
 
     @GetMapping("/{id}")
@@ -29,14 +32,14 @@ public class EventController {
         return eventService.addEvent(event);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteEventById(@PathVariable int id) {
-        eventService.deleteEventById(id);
+    @DeleteMapping("/{id}/{fileName}")
+    public void deleteEventById(@PathVariable int id, @PathVariable String fileName) {
+        playEventChoiceService.removeEventFromPlayAndDelete(fileName, id);
     }
 
     @PutMapping
-    public void updateEvent(@RequestBody EventModel event) {
-        eventService.updateEvent(event);
+    public EventModel updateEvent(@RequestBody EventModel event) {
+        return eventService.updateEvent(event);
     }
 
     @GetMapping("/votes/{eventId}")
@@ -47,7 +50,7 @@ public class EventController {
     @PutMapping("/{eventId}/{choiceId}")
     public EventModel addChoiceToEvent(@PathVariable int eventId,
                                        @PathVariable int choiceId) {
-        return eventService.addChoiceToEvent(eventId, choiceId);
+        return playEventChoiceService.addChoiceToEvent(eventId, choiceId);
     }
 
     @GetMapping("/save/{eventId}")
@@ -56,6 +59,9 @@ public class EventController {
     }
 
 
-
+    @GetMapping("mostVotes/{eventId}")
+    public ChoiceModel getChoiceWithMostVotes(@PathVariable int eventId) {
+        return eventService.getChoiceWithMostVotes(eventId);
+    }
 
 }

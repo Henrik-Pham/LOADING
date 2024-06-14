@@ -1,0 +1,30 @@
+body{
+    background-color: #343333;
+
+
+}
+#play{
+    border: black 3px solid;
+}
+.event{
+    background-color: #343333;
+    color: white;
+    border: white 3px solid;
+
+}
+.choice{
+    background-color: #343333;
+    color: white;
+    border-top: white 3px solid;
+
+}
+.event {
+    position: relative; /* This is needed for absolute positioning of the delete button */
+}
+
+.delete-button {
+    position: absolute;
+    right: 0;
+    background-color: red;
+    color: white;
+}

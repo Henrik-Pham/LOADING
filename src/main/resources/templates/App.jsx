@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./styles.css"; // Adjust relative path
-import MainPage from "./MainPage"; // Adjust relative path
-import Admin from "./Admin"; // Adjust relative path
-import InstructionsPage from './InstructionsPage'; // Adjust relative path
-import BigScreen from "./BigScreen.jsx"; // Adjust relative path
+import "./styles.css";
+import MainPage from "./MainPage";
+import Admin from "./Admin";
+import InstructionsPage from './InstructionsPage';
+import BigScreen from "./BigScreen.jsx";
 
 function App() {
     return (

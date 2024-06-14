@@ -1,6 +1,7 @@
 
 package com.example.loadingbackend.Controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.google.gson.Gson;
+import javax.servlet.http.HttpServletRequest;
 
 
 
@@ -39,6 +41,7 @@ public class ViewController {
     @CrossOrigin
     @PostMapping("/start")
     public ResponseEntity<String> startProcess() {
+
         isStarted = true;
         return ResponseEntity.ok(gson.toJson("Process started"));
     }
@@ -51,5 +54,15 @@ public class ViewController {
         } else {
             return ResponseEntity.ok(gson.toJson("Process not started"));
         }
+    }
+
+    @GetMapping("/author")
+    public String getAuthor() {
+        return "author";
+    }
+
+    @GetMapping("/author.css")
+    public String getAuthorCss() {
+        return "author.css";
     }
 }

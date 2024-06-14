@@ -16,20 +16,26 @@ import java.util.Map;
 public class EventService {
 
     private final EventRepo eventRepo;
-    private final ChoiceRepo choiceRepo;
+
+
+
+
 
     @Autowired
-    public EventService(EventRepo eventRepo, ChoiceRepo choiceRepo) {
+    public EventService(EventRepo eventRepo) {
         this.eventRepo = eventRepo;
-        this.choiceRepo = choiceRepo;
+
+
     }
 
     public void deleteEventById(int id) {
+
+        // Then, delete the event
         eventRepo.deleteById(id);
     }
 
-    public void updateEvent(EventModel event) {
-        eventRepo.save(event);
+    public EventModel updateEvent(EventModel event) {
+        return eventRepo.save(event);
     }
 
     public EventModel getEventById(int id) {
@@ -53,20 +59,6 @@ public class EventService {
         return null;
     }
 
-    public EventModel addChoiceToEvent(int eventId, int choiceId) {
-        EventModel event = getEventById(eventId);
-        System.out.println("event");
-        ChoiceModel choice = choiceRepo.findById(choiceId).orElse(null);
-        System.out.println("Choice: ");
-        if (event != null && choice != null) {
-            event.getChoices().add(choice);
-            eventRepo.save(event);
-        }
-        return null;
-
-    }
-
-
     public void saveEventAsJson(int eventId, String filePath) {
         EventModel event = getEventById(eventId);
         ObjectMapper objectMapper = new ObjectMapper();
@@ -75,5 +67,15 @@ public class EventService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public ChoiceModel getChoiceWithMostVotes(int eventId) {
+        EventModel event = getEventById(eventId);
+        if (event != null) {
+            return event.getChoices().stream().max(
+                    java.util.Comparator.comparingInt(choice -> choice.getVotes().size())
+            ).orElse(null);
+        }
+        return null;
     }
 }

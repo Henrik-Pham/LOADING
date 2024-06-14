@@ -28,7 +28,7 @@ function BigScreen() {
                 });
         }, 1000); // Poll every 1 second
 
-        return () => clearInterval(interval); // Clean up on component unmount
+        return () => clearInterval(interval);
     }, [host]);
 
     const ChoiceDisplay = ({ icon, description }) => (

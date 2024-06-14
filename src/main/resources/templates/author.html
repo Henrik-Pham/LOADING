@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forfatter</title>
+    <link rel="stylesheet" href="author.css">
+</head>
+<body>
+<div id="root">
+    <div id="write">
+        <h1>Skriv/rediger et stykke</h1>
+        <form id="writeForm">
+            <p>Enter name of existing file to edit or a new name to create a new file</p>
+            <input type="text" id="fileName" placeholder="Play name">
+            <br> <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="play"></div>
+    </div>
+    <div id="read"></div>
+</div>
+<script>
+    const writeForm = document.getElementById('writeForm');
+    const fileName = document.getElementById('fileName');
+    const read = document.getElementById('read');
+    const playElement = document.getElementById('play');
+    let play = { fileName: '', events: []}
+    let currentFileName = '';
+
+    const eventContainer = document.createElement('div');
+    eventContainer.id = 'eventContainer';
+    playElement.appendChild(eventContainer);
+
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'Save Play';
+    saveButton.addEventListener('click', () => {
+        fetch(`http://localhost:8080/api/play/save/${currentFileName}`, {
+            method: 'POST',
+        })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch((error) => console.error('Error:', error));
+    });
+    writeForm.appendChild(saveButton);
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        currentFileName = fileName.value;
+
+        // Check if text fields, button and paragraph already exist
+        let eventNameField = document.getElementById('eventName');
+        let eventDescriptionField = document.getElementById('eventDescription');
+        let createEventButton = document.getElementById('createEventButton');
+        let eventInfoParagraph = document.getElementById('eventInfo');
+
+        // If they don't exist, create them
+        if (!eventNameField) {
+            // Create paragraph
+            eventInfoParagraph = document.createElement('p');
+            eventInfoParagraph.id = 'eventInfo';
+            eventInfoParagraph.textContent = `There are currently ${play.events.length} events. You can create a new one below:`;
+            writeForm.appendChild(eventInfoParagraph);
+
+            eventNameField = document.createElement('input');
+            eventNameField.type = 'text';
+            eventNameField.id = 'eventName';
+            eventNameField.placeholder = 'Enter event name';
+            writeForm.appendChild(eventNameField);
+        }
+
+        if (!eventDescriptionField) {
+            eventDescriptionField = document.createElement('input');
+            eventDescriptionField.type = 'text';
+            eventDescriptionField.id = 'eventDescription';
+            eventDescriptionField.placeholder = 'Enter event description';
+            writeForm.appendChild(eventDescriptionField);
+        }
+
+        if (!createEventButton) {
+            createEventButton = document.createElement('button');
+            createEventButton.textContent = 'Create Event';
+            createEventButton.id = 'createEventButton';
+            createEventButton.addEventListener('click', () => {
+                const event = {
+                    playEventName: eventNameField.value,
+                    eventDescription: eventDescriptionField.value,
+                    choices: []
+                };
+                createEvent(event);
+            });
+            writeForm.appendChild(createEventButton);
+        }
+
+        // If they do exist, clear their values and update paragraph
+        else {
+            eventNameField.value = '';
+            eventDescriptionField.value = '';
+            eventInfoParagraph.textContent = `There are currently ${play.events.length} events. You can create a new one below:`;
+        }
+
+        fetchPlayData();
+    }
+
+    if (writeForm) {
+        writeForm.addEventListener('submit', handleFormSubmit);
+    } else {
+        console.error("No element with id 'writeForm' found");
+    }
+
+    function fetchPlayData() {
+        fetch(`http://localhost:8080/api/play/${currentFileName}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(response => response.json())
+            .then(data => mapDataToPlayObject(data))
+            .catch((error) => console.error('Error:', error));
+    }
+
+    function mapDataToPlayObject(data) {
+        play.fileName = data.fileName;
+        if(data.events != null){
+            play.events = data.events.map(event => ({
+                id: event.id,
+                playEventName: event.playEventName,
+                eventDescription: event.eventDescription,
+                choices: event.choices ? event.choices.map(choice => ({
+                    id: choice.id,
+                    choiceDescription: choice.choiceDescription,
+                    nextEvent: choice.nextEvent
+                })) : []
+            }));
+        }
+
+        // Clear the event container
+        eventContainer.innerHTML = '';
+
+        // Append all events to the event container
+        play.events.forEach(event => createEventDiv(event));
+
+        const eventInfoParagraph = document.getElementById('eventInfo');
+        eventInfoParagraph.textContent = `There are currently ${play.events.length} events. You can create a new one below:`;
+    }
+
+    function createEventDiv(event) {
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'event';
+        eventDiv.innerHTML = `<h2 class="event-name">Event name: ${event.playEventName}</h2>`;
+        eventDiv.innerHTML += `<h3 class="event-id">Event id: ${event.id}</h3>`;
+        eventDiv.innerHTML += `<h3 class="event-description">Event description: ${event.eventDescription}</h3>`;
+
+        // Create text fields
+        const eventNameField = document.createElement('input');
+        eventNameField.type = 'text';
+        eventNameField.id = `eventName${event.id}`;
+        eventNameField.placeholder = 'Enter new event name';
+
+        const eventDescriptionField = document.createElement('input');
+        eventDescriptionField.type = 'text';
+        eventDescriptionField.id = `eventDescription${event.id}`;
+        eventDescriptionField.placeholder = 'Enter new event description';
+
+        // Create button
+        const updateEventButton = document.createElement('button');
+        updateEventButton.textContent = 'Update Event';
+        updateEventButton.addEventListener('click', () => {
+            // Only update event properties if the corresponding text fields are not empty
+            if (eventNameField.value.trim() !== '') {
+                event.playEventName = eventNameField.value;
+            }
+            if (eventDescriptionField.value.trim() !== '') {
+                event.eventDescription = eventDescriptionField.value;
+            }
+
+            // Update event on server
+            updateEvent(event)
+                .then(() => {
+                    // Update text in event div
+                    eventDiv.querySelector('.event-name').textContent = `Event name: ${event.playEventName}`;
+                    eventDiv.querySelector('.event-description').textContent = `Event description: ${event.eventDescription}`;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+
+        // Create delete button
+        const deleteEventButton = document.createElement('button');
+        deleteEventButton.textContent = 'Delete Event';
+        deleteEventButton.className = 'delete-button';
+        deleteEventButton.addEventListener('click', () => {
+            deleteEvent(event)
+                .then(() => {
+                    // Remove the event div from the DOM
+                    eventContainer.removeChild(eventDiv);
+
+                    // Remove the event from the play.events array
+                    const index = play.events.findIndex(e => e.id === event.id);
+                    if (index !== -1) {
+                        play.events.splice(index, 1);
+                    }
+
+                    // Update the event counter
+                    const eventInfoParagraph = document.getElementById('eventInfo');
+                    eventInfoParagraph.textContent = `There are currently ${play.events.length} events. You can create a new one below:`;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        // Append delete button to the event div
+        eventDiv.appendChild(deleteEventButton);
+
+        eventContainer.appendChild(eventDiv);
+
+        // Append text fields and button to the event div
+        eventDiv.appendChild(eventNameField);
+        eventDiv.appendChild(eventDescriptionField);
+        eventDiv.appendChild(updateEventButton);
+
+        if (event.choices.length < 4) {
+            createAdditionalChoices(event, eventDiv);
+        }
+
+        listChoices(event, eventDiv);
+
+        eventContainer.appendChild(eventDiv);
+    }
+
+
+
+
+
+
+
+    function createEvent(event) {
+        fetch('http://localhost:8080/api/event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(event),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Add the new event to the play on the server
+                return addEventToPlay(currentFileName, data.id);
+            })
+            .then(() => {
+                // Fetch the updated play data from the server
+                fetchPlayData();
+            });
+    }
+
+    function addEventToPlay(fileName, eventId) {
+        return fetch(`http://localhost:8080/api/play/${fileName}/${eventId}`, {
+            method: 'PUT',
+        });
+    }
+
+    function createChoice(choice, event) {
+        fetch('http://localhost:8080/api/choice', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(choice),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Add the new choice to the event
+                event.choices.push(data);
+
+                // Update the event on the server
+                return updateEvent(event);
+            })
+            .then(() => {
+                // Fetch the updated play data from the server
+                fetchPlayData();
+            });
+    }
+
+    function addChoiceToEvent(choice, event) {
+        fetch(`http://localhost:8080/api/event/${event.id}/${choice.id}`, { method: 'PUT' });
+    }
+
+    function updatePlay(play){
+        console.log("play object in update play " + play.fileName);
+        fetch(`http://localhost:8080/api/play/update/${currentFileName}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(play),
+        })
+            .then(response => response.json())
+            .then(data => {
+                fetchPlayData(data.filename);
+            })
+    }
+
+    function updateChoice(choice) {
+        return fetch('http://localhost:8080/api/choice', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(choice),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                fetchPlayData();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function fetchPlayData() {
+        fetch(`http://localhost:8080/api/play/${currentFileName}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(response => response.json())
+            .then(data => mapDataToPlayObject(data))
+            .catch((error) => console.error('Error:', error));
+    }
+
+
+    function updateEvent(event) {
+        return fetch('http://localhost:8080/api/event', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(event),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                fetchPlayData();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function deleteEvent(event) {
+        return fetch(`http://localhost:8080/api/event/${event.id}/${currentFileName}`, {
+            method: 'DELETE',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            });
+    }
+
+    function createAdditionalChoices(event, eventDiv) {
+        // Create a p tag that says there should be 4 choices, but there are currently less
+        const choicesMessageP = document.createElement('p');
+        choicesMessageP.textContent = `There should be 4 choices, but there are currently ${event.choices.length}.`;
+        eventDiv.appendChild(choicesMessageP);
+
+        // Create text field for new choice
+        const newChoiceField = document.createElement('input');
+        newChoiceField.type = 'text';
+        newChoiceField.id = `newChoice`;
+        newChoiceField.placeholder = 'Enter new choice';
+        eventDiv.appendChild(newChoiceField);
+
+        // Create a button for creating more choices
+        const createChoiceButton = document.createElement('button');
+        createChoiceButton.textContent = 'Create Choice';
+        createChoiceButton.addEventListener('click', () => {
+            if (newChoiceField && newChoiceField.value) {
+                // Create a new choice
+                const newChoice = {
+                    choiceDescription: newChoiceField.value,
+                    nextEvent: null
+                };
+
+                // Use the createChoice function to add the new choice to the event
+                createChoice(newChoice, event)
+                    .then(() => {
+                        // Fetch the updated play data from the server
+                        fetchPlayData();
+                    });
+            }
+        });
+        eventDiv.appendChild(createChoiceButton);
+    }
+
+    function listChoices(event, eventDiv) {
+        // Create a div for the choices
+        const choicesContainer = document.createElement('div');
+        choicesContainer.className = 'choices-container';
+
+        event.choices.forEach(choice => {
+            const choiceDiv = document.createElement('div');
+            choiceDiv.className = 'choice';
+
+            // Create p tag for choice description
+            const choiceDescriptionP = document.createElement('p');
+            choiceDescriptionP.textContent = `Choice description: ${choice.choiceDescription}`;
+            choiceDiv.appendChild(choiceDescriptionP);
+
+
+            const nextEventP = document.createElement('p');
+            nextEventP.textContent = `Id of the next event: ${choice.nextEvent}`;
+            choiceDiv.appendChild(nextEventP);
+
+            // Create update button
+            const updateChoiceButton = document.createElement('button');
+            updateChoiceButton.textContent = 'Update Choice';
+            updateChoiceButton.addEventListener('click', () => {
+                // Only update choice description and next event if the text fields are not empty
+                if (choiceDescriptionField.value.trim() !== '') {
+                    choice.choiceDescription = choiceDescriptionField.value;
+                }
+                if (nextEventField.value.trim() !== '' && !isNaN(nextEventField.value)) {
+                    addEventToChoice(choice.id, parseInt(nextEventField.value))
+                        .then(() => {
+                            choice.nextEvent = nextEventField.value;
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+
+                // Update choice on server
+                updateChoice(choice)
+                    .then(() => {
+                        // Update text in choice div
+                        choiceDescriptionP.textContent = `Choice description: ${choice.choiceDescription}`;
+                        nextEventP.textContent = `Next event: ${choice.nextEvent}`;
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+
+            // Create delete button
+            const deleteChoiceButton = document.createElement('button');
+            deleteChoiceButton.textContent = 'Delete Choice';
+            deleteChoiceButton.className = 'delete-button';
+            deleteChoiceButton.addEventListener('click', () => {
+                deleteChoice(event, choice)
+                    .then(() => {
+                        // Remove the choice div from the DOM
+                        choicesContainer.removeChild(choiceDiv);
+
+                        // Remove the choice from the event.choices array
+                        const index = event.choices.findIndex(c => c.id === choice.id);
+                        if (index !== -1) {
+                            event.choices.splice(index, 1);
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+
+            // Append delete button to the choice div
+            choiceDiv.appendChild(deleteChoiceButton);
+
+            // Create text field for changing choice description
+            const choiceDescriptionField = document.createElement('input');
+            choiceDescriptionField.type = 'text';
+            choiceDescriptionField.id = `choiceDescription${choice.id}`;
+            choiceDescriptionField.placeholder = 'Enter new choice description'; // Set default text
+            choiceDiv.appendChild(choiceDescriptionField);
+
+            // Create text field for changing next event
+            const nextEventField = document.createElement('input');
+            nextEventField.type = 'text';
+            nextEventField.id = `nextEvent${choice.id}`;
+            nextEventField.placeholder = 'Enter new next event';
+            choiceDiv.appendChild(nextEventField);
+
+            // Append choice div to the choices container
+            choicesContainer.appendChild(choiceDiv);
+            choiceDiv.appendChild(updateChoiceButton);
+        });
+
+        // Append choices container to the event div
+        eventDiv.appendChild(choicesContainer);
+    }
+
+    function deleteChoice(event, choice) {
+        return fetch(`http://localhost:8080/api/choice/${event.id}/${choice.id}`, {
+            method: 'DELETE',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            });
+    }
+    function addEventToChoice(choiceId, eventId) {
+        return fetch(`http://localhost:8080/api/choice/${choiceId}/${eventId}`, {
+            method: 'PUT',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            });
+    }
+
+
+</script>
+</body>
+</html>
