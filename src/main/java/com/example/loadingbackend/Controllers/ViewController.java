@@ -29,14 +29,7 @@ public class ViewController {
         return "index";
     }
 
-    @CrossOrigin
-    @GetMapping("/vote")
-    //Returns the index.html file from the resources/templates folder
-    //Placeholder for the front end
-    //css and other resources are stored in the resources/static folder
-    public String getVote() {
-        return "vote";
-    }
+
 
     @CrossOrigin
     @PostMapping("/start")
